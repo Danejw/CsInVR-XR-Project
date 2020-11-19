@@ -24,10 +24,9 @@ namespace CSInVR
         {
             if (other.gameObject.tag == "Ball")
             {
-                /* Play particle
+                // Play particle
                 if (particle & !particle.isPlaying)
                     particle.Play();
-                */
 
                 // Play Sound
                 if (!sound.isPlaying)

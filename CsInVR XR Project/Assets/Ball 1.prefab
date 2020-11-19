@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 8550228568183152938}
   - component: {fileID: 8550228568183152939}
   - component: {fileID: 1378703895}
+  - component: {fileID: 6594843669407766666}
   m_Layer: 0
   m_Name: Ball 1
   m_TagString: Ball
@@ -607,12 +608,32 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+  debug: 1
   testVibration: 0
   useLinearVelocity: 1
   useAngularVelocity: 0
-  vibrationFloor: -0.2
+  vibrationFloor: 0
   velocity: {x: 0, y: 0, z: 0}
   angularVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &6594843669407766666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550228568183152945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01d1bc4e69250849b507a0f161e7dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  projectilePool: {fileID: 0}
+  useTrigger: 0
+  useCollision: 0
+  timeTillCollected: 5
+  ignoreTags: []
+  includeTags: []
 --- !u!1001 &8111697250070218342
 PrefabInstance:
   m_ObjectHideFlags: 0
