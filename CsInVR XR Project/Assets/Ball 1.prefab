@@ -608,7 +608,7 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
-  debug: 1
+  debug: 0
   testVibration: 0
   useLinearVelocity: 1
   useAngularVelocity: 0
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01d1bc4e69250849b507a0f161e7dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   projectilePool: {fileID: 0}
   useTrigger: 0
   useCollision: 0
