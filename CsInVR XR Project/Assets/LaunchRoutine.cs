@@ -49,7 +49,7 @@ namespace CSInVR
             }
         }
 
-        private void StartRoutine()
+        public void StartRoutine()
         {
             startRoutine = true;
 

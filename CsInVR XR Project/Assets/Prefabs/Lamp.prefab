@@ -43,10 +43,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 14.16
-  m_Range: 10.8
-  m_SpotAngle: 134.43309
-  m_InnerSpotAngle: 91.73061
+  m_Intensity: 33.95
+  m_Range: 16.16
+  m_SpotAngle: 179
+  m_InnerSpotAngle: 108.10007
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -88,7 +88,7 @@ Light:
   m_BounceIntensity: 10.48
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 3e-45, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

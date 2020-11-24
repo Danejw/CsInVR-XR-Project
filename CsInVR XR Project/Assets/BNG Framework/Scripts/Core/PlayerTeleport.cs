@@ -444,7 +444,7 @@ namespace BNG {
             OnAfterTeleport?.Invoke();
         }
 
-        IEnumerator doTeleport(Vector3 playerDestination, Quaternion playerRotation, bool rotatePlayer) {
+        public IEnumerator doTeleport(Vector3 playerDestination, Quaternion playerRotation, bool rotatePlayer) {
 
             if(!setVariables) {
                 setupVariables();

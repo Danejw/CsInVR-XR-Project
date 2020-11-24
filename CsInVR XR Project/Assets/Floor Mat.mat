@@ -35,7 +35,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 400, y: 400}
+        m_Scale: {x: 200, y: 200}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
@@ -54,12 +54,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d6c4a5375aaadd44cbe5a8982f7a63e1, type: 3}
         m_Scale: {x: 400, y: 400}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 400, y: 400}
+        m_Scale: {x: 200, y: 200}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -110,5 +110,5 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     - _Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-    - _EmissionColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    - _EmissionColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
     - _SpecColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0.5}

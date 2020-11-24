@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 8550228568183152938}
   - component: {fileID: 8550228568183152939}
   - component: {fileID: 1378703895}
-  - component: {fileID: 6594843669407766666}
+  - component: {fileID: 1005181448}
   m_Layer: 0
   m_Name: Ball 1
   m_TagString: Ball
@@ -297,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 8550228568183152945}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -1.5584302, y: 0.41566992, z: -3.6372023}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 8114736764637763076}
   - {fileID: 8550228566491483962}
@@ -313,7 +313,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8550228568183152945}
-  m_Mesh: {fileID: 4300000, guid: 6385e85ec369bac4c8b20fdb297d102b, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8550228568183152950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.103357896
+  m_Radius: 0.5315471
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8550228568183152937
 Rigidbody:
@@ -615,7 +615,7 @@ MonoBehaviour:
   vibrationFloor: 0
   velocity: {x: 0, y: 0, z: 0}
   angularVelocity: {x: 0, y: 0, z: 0}
---- !u!114 &6594843669407766666
+--- !u!114 &1005181448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -624,16 +624,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8550228568183152945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d01d1bc4e69250849b507a0f161e7dad, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c9c0983a29afeb4a80e67b1212f69e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
-  projectilePool: {fileID: 0}
-  useTrigger: 0
-  useCollision: 0
-  timeTillCollected: 5
-  ignoreTags: []
-  includeTags: []
+  isActive: 1
+  debug: 0
+  hasHiked: 0
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &8111697250070218342
 PrefabInstance:
   m_ObjectHideFlags: 0
