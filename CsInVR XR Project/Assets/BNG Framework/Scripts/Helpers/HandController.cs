@@ -181,20 +181,20 @@ namespace BNG {
                 _prevPoint = Mathf.Lerp(_prevPoint, PointAmount, Time.deltaTime * HandAnimationSpeed);
 
                 // 0 = Hands Open, 1 = Grip closes                        
-                HandAnimator.SetFloat("Flex", _prevGrip);
+                //HandAnimator.SetFloat("Flex", _prevGrip);
 
-                HandAnimator.SetLayerWeight(1, _prevThumb);
+                //HandAnimator.SetLayerWeight(1, _prevThumb);
 
                 //// 0 = pointer finger inwards, 1 = pointing out    
                 //// Point is played as a blend
                 //// Near trigger? Push finger down a bit
-                HandAnimator.SetLayerWeight(2, _prevPoint);
+                //HandAnimator.SetLayerWeight(2, _prevPoint);
 
                 // Should we use a custom hand pose?
                 if (grabber.HeldGrabbable != null) {
-                    HandAnimator.SetLayerWeight(0, 0);
-                    HandAnimator.SetLayerWeight(1, 0);
-                    HandAnimator.SetLayerWeight(2, 0);
+                    //HandAnimator.SetLayerWeight(0, 0);
+                    //HandAnimator.SetLayerWeight(1, 0);
+                    //HandAnimator.SetLayerWeight(2, 0);
 
                     PoseId = (int)grabber.HeldGrabbable.CustomHandPose;
 
@@ -217,15 +217,15 @@ namespace BNG {
                         }
                     }
 
-                    HandAnimator.SetInteger("Pose", PoseId);
+                    //HandAnimator.SetInteger("Pose", PoseId);
                 }
                 else {
-                    HandAnimator.SetInteger("Pose", 0);
+                    //HandAnimator.SetInteger("Pose", 0);
                 }
             }
 
             void setAnimatorBlend(float min, float max, float input, int animationLayer) {
-                HandAnimator.SetLayerWeight(animationLayer, min + (input) * max - min);
+                //HandAnimator.SetLayerWeight(animationLayer, min + (input) * max - min);
             }
         }
     }
