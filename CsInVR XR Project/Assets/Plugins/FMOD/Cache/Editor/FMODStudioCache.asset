@@ -17,12 +17,35 @@ MonoBehaviour:
   Banks:
   - {fileID: -4522231344131449568}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 180864
+--- !u!114 &-4961985594169520781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Collider
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Collider
+  guid: 0e991e743f61c045a1e86b59109420d4
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 180864
+  Length: 20
 --- !u!114 &-4522231344131449568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,11 +60,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637418940123401061
+  lastModified: 637419032923589880
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2328960
+    Value: 3785696
   Exists: 1
 --- !u!114 &-1246109764670849901
 MonoBehaviour:
@@ -82,12 +105,14 @@ MonoBehaviour:
   - {fileID: -4522231344131449568}
   EditorEvents:
   - {fileID: -6857265238419352872}
+  - {fileID: -4961985594169520781}
+  - {fileID: 2685217148431470256}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4522231344131449568}
   StringsBanks:
   - {fileID: 1084308680359849963}
-  stringsBankWriteTime: 637418940123436099
+  stringsBankWriteTime: 637419032923769670
   cacheVersion: 5
 --- !u!114 &1084308680359849963
 MonoBehaviour:
@@ -103,12 +128,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637418940123436099
+  lastModified: 637419032923769670
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 748
+    Value: 834
   Exists: 1
+--- !u!114 &2685217148431470256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Crowd
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Crowd
+  guid: 8b7f0946e06535428cbe4205810ae8c8
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &6542986645156195019
 MonoBehaviour:
   m_ObjectHideFlags: 0
