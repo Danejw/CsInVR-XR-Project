@@ -34,14 +34,14 @@ namespace CSInVR.Football
         void OnEnable()
         {
             grabbable = GetComponent<Grabbable>();
-            if (!isActive) isActive = true;
+            if (!GetBallIsActive()) SetBallIsActive(true);
 
             startingPosition = this.transform.position;
         }
 
         private void OnDisable()
         {
-            if (isActive) isActive = false;
+            if (GetBallIsActive()) SetBallIsActive(false);
         }
 
 
@@ -50,7 +50,7 @@ namespace CSInVR.Football
         {
             if (!isHiked)
             {
-                if (isActive && hasHiked)
+                if (GetBallIsActive() && hasHiked)
                 {
                     onHike?.Invoke();
                     hasHiked = true;
@@ -73,9 +73,9 @@ namespace CSInVR.Football
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "Ground")
+            if (collision.gameObject.tag == "Ground" && GetBallIsActive())
             {
-                isActive = false;
+                SetBallIsActive(false);
 
                 onMissedCatch?.Invoke();
 
@@ -87,6 +87,7 @@ namespace CSInVR.Football
         {
             isHiked = value;
         }
+
 
     }
 }

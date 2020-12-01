@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-namespace CSInVR.FMOD
+namespace CSInVR.Football.Fmod
 {
     public class FmodCollisionSound : MonoBehaviour
     {
-        [SerializeField] private string eventPath;
+        public bool debug;
+
+        [SerializeField][EventRef] private string eventPath;
 
 
         private void OnCollisionEnter(Collision collision)
         {
-            RuntimeManager.PlayOneShotAttached(eventPath, this.gameObject);
+            if (eventPath != null)
+                RuntimeManager.PlayOneShotAttached(eventPath, this.gameObject);
+            else
+                if (debug) Debug.Log("The eventPath is NOT assigned to the collision sound effect");
         }
     }
 }

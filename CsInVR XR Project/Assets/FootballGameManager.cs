@@ -21,20 +21,14 @@ namespace CSInVR.Football
         // recievers array
         [SerializeField] private Reciever[] recievers;
 
-        // sound list
-        private AudioSource audioSource;
 
-        [SerializeField] AudioClip catchClip;
-
-
-        [SerializeField] private CrowdSoundController crowdControl;
 
         // text list
 
 
         private void Start()
         {
-            audioSource = GetComponent<AudioSource>();
+
         }
 
 
@@ -62,7 +56,7 @@ namespace CSInVR.Football
         public void InitializeGame()
         {
             // init ball
-            ball.isActive = true;
+            ball.SetBallIsActive(true);
             ball.SetIsHiked(false);
             ball.hasHiked = false;
 
@@ -111,44 +105,25 @@ namespace CSInVR.Football
         // OnHike Event
         private void HikeEvent()
         {
-            // On Hike Sound Effect
 
-            // crowd cheer change
-            if (crowdControl) crowdControl.PlayCheeringCrowd();
         }
 
         // OnCatch Event
         private void CatchEvent()
         {
-            // OnCatch Sound Effect
-            if (catchClip && !audioSource.isPlaying)
-            {
-                audioSource.clip = catchClip;
-                audioSource.Play();
-            }
 
-            // crowd cheer change
-            if (crowdControl) crowdControl.PlayHypedCrowd();
         }
 
         // OnGoal Event
         private void GoalEvent()
         {
-            // Goal Sound Effect
-
-            // crowd cheer change
-            if (crowdControl) crowdControl.PlayTouchdownCrowd();
 
         }
 
         // OnMissedCatch Event
         private void MissedCatchEvent()
         {
-            // Missed Catch sound effect
 
-
-            // Crowd cheer chane
-            if (crowdControl) crowdControl.PlayMissedOpportunity();
         }
 
         // Un-Subscribe to Events
@@ -162,7 +137,6 @@ namespace CSInVR.Football
 
 
         // Sounds
-        // Crowd
         // Referee
 
         // particles

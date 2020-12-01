@@ -7,7 +7,7 @@ namespace CSInVR
 {
     public class Ball : MonoBehaviour
     {
-        public bool isActive;
+        private bool isActive;
 
 
         private void Start()
@@ -23,6 +23,16 @@ namespace CSInVR
         private void OnDisable()
         {
             isActive = false;
+        }
+
+        public void SetBallIsActive(bool value)
+        {
+            isActive = value;
+        }
+        
+        public bool GetBallIsActive()
+        {
+            return isActive;
         }
     }
 }

@@ -80,7 +80,7 @@ namespace CSInVR.Football
             {
                 Ball ball = other.gameObject.GetComponent<Ball>();
 
-                if (ball && ball.isActive)
+                if (ball && ball.GetBallIsActive())
                 {
                     if (!hasCaught)
                     {

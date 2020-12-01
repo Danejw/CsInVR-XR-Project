@@ -14,15 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Events/Cube
   guid: ca6417dd6444fb40ad25085aa6e8bbec
-  Banks:
-  - {fileID: -4522231344131449568}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 180864
+  Length: 202553
 --- !u!114 &-4961985594169520781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,8 +42,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 20
 --- !u!114 &-4522231344131449568
 MonoBehaviour:
@@ -60,12 +59,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637419032923589880
+  lastModified: 637423361288818379
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3785696
+    Value: 2177984
   Exists: 1
+--- !u!114 &-1923434288240872313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/SoundEffects
+  m_EditorClassIdentifier: 
+  Path: event:/Events/SoundEffects
+  guid: 96d3f4d72597684e99749eb131108012
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1246109764670849901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,15 +126,15 @@ MonoBehaviour:
   - {fileID: 1084308680359849963}
   - {fileID: -4522231344131449568}
   EditorEvents:
-  - {fileID: -6857265238419352872}
   - {fileID: -4961985594169520781}
   - {fileID: 2685217148431470256}
+  - {fileID: -1923434288240872313}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4522231344131449568}
   StringsBanks:
   - {fileID: 1084308680359849963}
-  stringsBankWriteTime: 637419032923769670
+  stringsBankWriteTime: 637423361288868398
   cacheVersion: 5
 --- !u!114 &1084308680359849963
 MonoBehaviour:
@@ -128,11 +150,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637419032923769670
+  lastModified: 637423361288868398
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 834
+    Value: 966
   Exists: 1
 --- !u!114 &2685217148431470256
 MonoBehaviour:
@@ -152,11 +174,11 @@ MonoBehaviour:
   - {fileID: -4522231344131449568}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1000
+  Length: 42000
 --- !u!114 &6542986645156195019
 MonoBehaviour:
   m_ObjectHideFlags: 0
