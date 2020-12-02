@@ -23,6 +23,7 @@ namespace CSInVR.Football
 
         [HideInInspector] public Animator anim;
 
+
         private void Start()
         {
             anim = GetComponent<Animator>();
@@ -46,8 +47,7 @@ namespace CSInVR.Football
         {
             anim.SetBool("Run", true);
 
-            if (debug) Debug.Log("The Reciever started to run");
-          
+            if (debug) Debug.Log("The Reciever started to run");        
         }
 
         private void CatchBall()
@@ -72,7 +72,6 @@ namespace CSInVR.Football
 
             if (debug) Debug.Log("The ball has been moved");
         }
-
 
         private void OnTriggerEnter(Collider other)
         {

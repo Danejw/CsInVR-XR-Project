@@ -59,11 +59,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637423361288818379
+  lastModified: 637425011646013535
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2177984
+    Value: 4142784
   Exists: 1
 --- !u!114 &-1923434288240872313
 MonoBehaviour:
@@ -129,13 +129,37 @@ MonoBehaviour:
   - {fileID: -4961985594169520781}
   - {fileID: 2685217148431470256}
   - {fileID: -1923434288240872313}
+  - {fileID: 206720452808306048}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4522231344131449568}
   StringsBanks:
   - {fileID: 1084308680359849963}
-  stringsBankWriteTime: 637423361288868398
+  stringsBankWriteTime: 637425011646058437
   cacheVersion: 5
+--- !u!114 &206720452808306048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Music
+  guid: 2338d8a4c388d943b9d094ca745366ab
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 137381
 --- !u!114 &1084308680359849963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,11 +174,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637423361288868398
+  lastModified: 637425011646058437
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 966
+    Value: 1002
   Exists: 1
 --- !u!114 &2685217148431470256
 MonoBehaviour:
