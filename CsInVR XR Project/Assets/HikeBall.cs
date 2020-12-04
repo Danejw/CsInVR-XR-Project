@@ -23,6 +23,7 @@ namespace CSInVR.Football
 
         private Grabbable grabbable;
 
+        private bool isCaught;
         public Vector3 startingPosition;
 
 
@@ -54,6 +55,8 @@ namespace CSInVR.Football
                 {
                     onHike?.Invoke();
                     hasHiked = true;
+
+                    isCaught = false;
 
                     if (debug) Debug.Log("The ball has been hiked");
 
@@ -88,6 +91,9 @@ namespace CSInVR.Football
             isHiked = value;
         }
 
-
+        public bool GetIsCaught()
+        {
+            return isCaught;
+        }
     }
 }
