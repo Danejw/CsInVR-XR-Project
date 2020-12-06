@@ -7,7 +7,7 @@ namespace CSInVR
 {
     public class Ball : MonoBehaviour
     {
-        private bool isActive;
+        [SerializeField] private bool isActive;
 
 
         private void Start()

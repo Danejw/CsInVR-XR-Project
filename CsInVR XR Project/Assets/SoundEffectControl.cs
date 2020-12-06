@@ -32,7 +32,7 @@ namespace CSInVR.Football.Fmod
         // Subscribe to Events
         private void OnEnable()
         {
-            FootballGameManager.readyToStart += ReadyToStartSoundEvent;
+            //FootballGameManager.readyToStart += ReadyToStartSoundEvent;
             HikeBall.onHike += HikeSoundEvent;
             Reciever.onCatch += CatchSoundEvent;
             Goal.onGoal += GoalSoundEvent;
@@ -42,7 +42,7 @@ namespace CSInVR.Football.Fmod
         // Un-Subscribe to Events
         private void OnDisable()
         {
-            FootballGameManager.readyToStart -= ReadyToStartSoundEvent;
+            //FootballGameManager.readyToStart -= ReadyToStartSoundEvent;
             HikeBall.onHike -= HikeSoundEvent;
             Reciever.onCatch -= CatchSoundEvent;
             Goal.onGoal -= GoalSoundEvent;
@@ -67,7 +67,7 @@ namespace CSInVR.Football.Fmod
             if (debug) Debug.Log("Hike sound has played");
         }
 
-        private void CatchSoundEvent()
+        private void CatchSoundEvent(GameObject reviever)
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 2);
@@ -111,7 +111,7 @@ namespace CSInVR.Football.Fmod
 
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    CatchSoundEvent();
+                    CatchSoundEvent(null);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Alpha3))

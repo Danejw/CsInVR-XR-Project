@@ -417,7 +417,6 @@ GameObject:
   - component: {fileID: 6531214579445557372}
   - component: {fileID: 2799860873619218941}
   - component: {fileID: 678875866184207479}
-  - component: {fileID: 3101684430078874868}
   - component: {fileID: 3876328972446173227}
   m_Layer: 0
   m_Name: Reciever
@@ -434,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6531214579445557369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.75, y: -1, z: 2.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6531214578320506347}
@@ -456,11 +455,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff11d36483875b46921d97e61bd5196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   caughtPosition: {fileID: 1566750087}
   hasCaught: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
+  footballGame: {fileID: 0}
+  divisionPoint: {fileID: 665683426391923770, guid: 67ba625f60d70f24f81b7ef56d70a288,
+    type: 3}
+  numberOfDivisions: 4
+  extraDistanceAmount: 10
+  recieverSpeed: 1
+  randomness: 4
+  waypointRadius: 0.1
+  isRunning: 0
+  regenerateRoute: 0
 --- !u!54 &2799860873619218941
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -490,25 +498,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.4382032
   m_Center: {x: 0, y: 0.83628726, z: 0}
---- !u!95 &3101684430078874868
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6531214579445557369}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d47c9e418215fc429963dd68a65d9b3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &3876328972446173227
 BoxCollider:
   m_ObjectHideFlags: 0

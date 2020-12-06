@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using BNG;
 
-
 namespace CSInVR.Football
 {
+    [RequireComponent(typeof(Grabbable))]
+
     public class HikeBall : Ball
     {
         public bool debug;
@@ -24,20 +25,26 @@ namespace CSInVR.Football
         private Grabbable grabbable;
 
         private bool isCaught;
-        public Vector3 startingPosition;
+
+        [SerializeField] private FootballGame footballGame; 
+        private Vector3 startingPosition;
+
+        [SerializeField] private bool isGrabbed;
 
 
         private void Start()
         {
             grabbable = GetComponent<Grabbable>();
+            if (footballGame) footballGame = footballGame.GetComponent<FootballGame>(); else Debug.Log("The FootballGame is Not assigned");
         }
 
         void OnEnable()
         {
             grabbable = GetComponent<Grabbable>();
+
             if (!GetBallIsActive()) SetBallIsActive(true);
 
-            startingPosition = this.transform.position;
+            startingPosition = footballGame.startingPosition;
         }
 
         private void OnDisable()
@@ -49,29 +56,35 @@ namespace CSInVR.Football
         // Update is called once per frame
         void Update()
         {
-            if (!isHiked)
+            if (GetBallIsActive() && hasHiked)
             {
-                if (GetBallIsActive() && hasHiked)
-                {
-                    onHike?.Invoke();
-                    hasHiked = true;
+                isCaught = false;
+                onHike?.Invoke();
+                hasHiked = false;
 
-                    isCaught = false;
-
-                    if (debug) Debug.Log("The ball has been hiked");
-
-                    isHiked = true;
-                }
+                if (debug) Debug.Log("The ball has been hiked");
             }
 
 
             if (grabbable)
             {
                 if (grabbable.BeingHeld == true)
+                {    
+                    if (!isGrabbed)
+                    {
+                        hasHiked = true;
+                        isGrabbed = true;
+
+                        if (debug) Debug.Log("The Ball is being held");
+                    }
+                }
+                else if (isGrabbed)
                 {
-                    hasHiked = true;
+                    isGrabbed = false;
+                    if (debug) Debug.Log("The Ball was let go");
                 }
             }
+
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -95,5 +108,16 @@ namespace CSInVR.Football
         {
             return isCaught;
         }
+
+        public void ResetBall(Vector3 position)
+        {
+            transform.position = position;
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            GetComponent<Rigidbody>().isKinematic = false;
+            transform.parent = null;
+            SetBallIsActive(true);
+        }
     }
+
+    
 }
