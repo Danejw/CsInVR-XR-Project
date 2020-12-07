@@ -130,7 +130,7 @@ MonoBehaviour:
     type: 3}
   numberOfDivisions: 4
   extraDistanceAmount: -10
-  blockerSpeed: 1
+  blockerSpeed: 3
   randomness: 4
   waypointRadius: 0.5
   isRunning: 0

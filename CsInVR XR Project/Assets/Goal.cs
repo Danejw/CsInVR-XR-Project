@@ -17,6 +17,7 @@ namespace CSInVR.Football
         public static event OnFirstDown onFirstDown;
 
         private bool goalMade = false;
+        private bool madeFirstdown = false;
 
 
         private void MadeGoal()
@@ -41,7 +42,7 @@ namespace CSInVR.Football
 
                 if (reciever && reciever.hasCaught)
                 {
-                    MadeFirstDown();
+                    //MadeFirstDown();
                 }
             }
 

@@ -39,6 +39,8 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch += CrowdCheers;
             Goal.onGoal += CrowdTouchdown;
             HikeBall.onMissedCatch += CrowdMissedOpportunity;
+            //FootballGame.onReadyToStart
+            Blocker.onBlock += CrowdBlockedPass;
         }
 
         private void OnDisable()
@@ -47,8 +49,19 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch -= CrowdCheers;
             Goal.onGoal -= CrowdTouchdown;
             HikeBall.onMissedCatch -= CrowdMissedOpportunity;
+            Blocker.onBlock -= CrowdBlockedPass;
+
         }
 
+        private void CrowdBlockedPass(GameObject blocker)
+        {
+            // missed opporitunity crowd sound effect
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("Crowd Excitement", 0);
+            eventInstance.start();
+
+            if (debug) Debug.Log("The crowd is dissappointed");
+        }
 
         private void CrowdMissedOpportunity()
         {

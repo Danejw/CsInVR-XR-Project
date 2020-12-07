@@ -49,6 +49,8 @@ namespace CSInVR.Football
         {
             HikeBall.onHike += Run;
             Reciever.onCatch += CatchEvent;
+            Blocker.onBlock += BlockEvent;
+
             hasCaught = false;
             isRunning = false;
 
@@ -59,6 +61,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike -= Run;
             Reciever.onCatch -= CatchEvent;
+            Blocker.onBlock -= BlockEvent;
         }
 
         private void Update()
@@ -195,6 +198,11 @@ namespace CSInVR.Football
 
         // events
         private void CatchEvent(GameObject reciever)
+        {
+            isRunning = false;
+        }
+
+        private void BlockEvent(GameObject blocker)
         {
             isRunning = false;
         }

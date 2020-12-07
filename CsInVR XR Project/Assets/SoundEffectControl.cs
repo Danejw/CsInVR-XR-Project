@@ -38,6 +38,8 @@ namespace CSInVR.Football.Fmod
             Goal.onGoal += GoalSoundEvent;
             HikeBall.onMissedCatch += MissedCatchSoundEvent;
             Goal.onFirstDown += FirstdownSoundEvent;
+            FootballGame.onReadyToStart += ReadyToStartSoundEvent;
+            Blocker.onBlock += BlockEvent;
         }
 
         // Un-Subscribe to Events
@@ -49,6 +51,17 @@ namespace CSInVR.Football.Fmod
             Goal.onGoal -= GoalSoundEvent;
             HikeBall.onMissedCatch -= MissedCatchSoundEvent;
             Goal.onFirstDown -= FirstdownSoundEvent;
+            FootballGame.onReadyToStart -= ReadyToStartSoundEvent;
+            Blocker.onBlock += BlockEvent;
+        }
+
+        private void BlockEvent(GameObject blocker)
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 7);
+            eventInstance.start();
+
+            if (debug) Debug.Log("Blocked sound has played");
         }
 
         private void ReadyToStartSoundEvent()

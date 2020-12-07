@@ -18,12 +18,10 @@ namespace CSInVR.Football
         public Vector3 startingPosition;
 
         private float yardage;
-        [SerializeField] private bool isMovingFirstDownMarker = false;
-        [SerializeField] private float firstdownMarkSpeed = 1;
-        [SerializeField] private Vector3 markerMoveTo;
 
         private bool isTouchdown;
         private GameObject catchingReciever;
+        private GameObject blockingBlocker;
 
         [SerializeField] private float distTillFirstdown;
         [SerializeField] private Vector3 firstDownIncrement = new Vector3(0, 0, 10);
@@ -35,6 +33,9 @@ namespace CSInVR.Football
         //events
         public delegate void OnFirstDown();
         public static event OnFirstDown onFirstdown;
+
+        public delegate void OnReadyToStart();
+        public static event OnReadyToStart onReadyToStart;
 
 
         private void Awake()
@@ -52,6 +53,7 @@ namespace CSInVR.Football
             Reciever.onCatch += CatchEvent;
             Goal.onGoal += Touchdown;
             Goal.onFirstDown += FirstdownEvent;
+            Blocker.onBlock += BlockEvent;
         }
 
         private void OnDisable()
@@ -60,6 +62,7 @@ namespace CSInVR.Football
             Reciever.onCatch -= CatchEvent;
             Goal.onGoal -= Touchdown;
             Goal.onFirstDown -= FirstdownEvent;
+            Blocker.onBlock -= BlockEvent;
         }
 
         // Game Loop
@@ -72,11 +75,6 @@ namespace CSInVR.Football
         private void Update()
         {
             distTillFirstdown = firstdownMark.transform.position.z - hikePosition.z;
-
-            if (isMovingFirstDownMarker)
-                moveFirstDownMarkers(markerMoveTo);
-
-
 
             if (currentDown <= maxDown || isTouchdown)
             {
@@ -126,25 +124,10 @@ namespace CSInVR.Football
             // sets the current down to zero
             currentDown = 1;
             // moves new firstdown to 'x' units plus caught position
-            markerMoveTo = position + firstDownIncrement;
-            isMovingFirstDownMarker = true;
+            firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = position + firstDownIncrement;
+            firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
             // send off firstdown event
             onFirstdown?.Invoke();
-        }
-
-        // Moves the firstdown marker in the z direction
-        private void moveFirstDownMarkers(Vector3 position)
-        {
-            Vector3 moveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, position.z);
-
-            if (Vector3.Distance(firstdownMark.transform.position , markerMoveTo) < 0.2f)
-            {
-                isMovingFirstDownMarker = false;
-            }
-            else
-                firstdownMark.transform.position = Vector3.MoveTowards(firstdownMark.transform.position, moveTo, Time.deltaTime * firstdownMarkSpeed);
-
-            if (debug) Debug.Log("Moving along " + firstdownMark.name + "'s route to " + moveTo);
         }
 
         private void GameOver()
@@ -159,22 +142,23 @@ namespace CSInVR.Football
         {
             if (debug) Debug.Log("Getting ready to play the next play");
 
-            if (firstdownMark.transform.position.z - yardage <= 0)
+            if (firstdownMark.transform.position.z <= 0)
             {
                 if (debug) Debug.Log("FirstDown, reseting to new firstdown position " + (firstdownMark.transform.position.z - yardage));
 
                 setFirstDown(hikePosition);
+                onReadyToStart?.Invoke();
                 //setPositions(new Vector3(0, 0, caughtPosition.z));
                 ResetBall();
             }
             else
             {
-                //setPositions(caughtPosition);
+                if (debug) Debug.Log("Firstdown position " + (firstdownMark.transform.position.z - yardage));
+
+                onReadyToStart?.Invoke();
                 ResetBall();
             }           
         }
-
-
 
 
         private void ResetBall()
@@ -213,13 +197,22 @@ namespace CSInVR.Football
             catchingReciever = reciever;
             caughtPosition = reciever.transform.position;
 
+            if (debug) Debug.Log("The ball was caught by " + catchingReciever.name);
+
             // calculate the yardage
             yardage = calcPlayYardage(caughtPosition, hikePosition);
-            markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
+            firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
             // move the firstdown markers
-            isMovingFirstDownMarker = true;
+            firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
 
             if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
+
+            currentDown += 1;
+        }
+
+        private void BlockEvent(GameObject blocker)
+        {
+            if (debug) Debug.Log("The ball was blocked by " + blocker.name);
 
             currentDown += 1;
         }
