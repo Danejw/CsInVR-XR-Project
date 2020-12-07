@@ -70,7 +70,7 @@ namespace CSInVR.Football.Fmod
             if (debug) Debug.Log("The crowd is normal");
         }
 
-        private void CrowdCheers()
+        private void CrowdCheers(GameObject reciever)
         {
             // cheering crowd sound effect
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -124,7 +124,7 @@ namespace CSInVR.Football.Fmod
 
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    CrowdCheers();
+                    CrowdCheers(null);
                 }
 
                 if (Input.GetKeyDown(KeyCode.Alpha3))

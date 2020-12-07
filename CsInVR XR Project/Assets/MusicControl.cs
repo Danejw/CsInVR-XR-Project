@@ -18,7 +18,7 @@ namespace CSInVR.Football.Fmod
         private EventInstance eventInstance;
 
 
-        private void Start()
+        private void OnEnable()
         {
             if (eventPath != null)
             {
@@ -28,6 +28,11 @@ namespace CSInVR.Football.Fmod
             }
             else
                 Debug.LogError("The event path is Not assigned");
+        }
+
+        private void OnDisable()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 }
