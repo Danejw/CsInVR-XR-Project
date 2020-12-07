@@ -135,7 +135,7 @@ namespace CSInVR.Football
         {
             Vector3 moveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, position.z);
 
-            if (Vector3.Distance(firstdownMark.transform.position , markerMoveTo) < 0.5f)
+            if (Vector3.Distance(firstdownMark.transform.position , markerMoveTo) < 0.2f)
             {
                 isMovingFirstDownMarker = false;
             }
