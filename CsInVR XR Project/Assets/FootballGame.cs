@@ -22,6 +22,7 @@ namespace CSInVR.Football
         private bool isTouchdown;
         private GameObject catchingReciever;
         private GameObject blockingBlocker;
+        private bool isGameOver;
 
         [SerializeField] private float distTillFirstdown;
         [SerializeField] private Vector3 firstDownIncrement = new Vector3(0, 0, 10);
@@ -36,6 +37,9 @@ namespace CSInVR.Football
 
         public delegate void OnReadyToStart();
         public static event OnReadyToStart onReadyToStart;
+
+        public delegate void OnGameOver();
+        public static event OnGameOver onGameOver;
 
 
         private void Awake()
@@ -81,10 +85,10 @@ namespace CSInVR.Football
                 if (ball.GetBallIsActive() && ball.hasHiked)
                 {
                     print("The ball has been hiked and is active");
-                }                 
+                }
             }
-            
-            
+            else
+                GameOver();       
         }
 
         // Functions
@@ -97,6 +101,7 @@ namespace CSInVR.Football
             ResetBall();
 
             isTouchdown = false;
+            isGameOver = false;
             currentDown = 1;
         }
 
@@ -133,6 +138,10 @@ namespace CSInVR.Football
         private void GameOver()
         {
             if (debug) Debug.Log("The Game is Over!");
+
+            isGameOver = true;
+
+            onGameOver?.Invoke();
 
             // happens when the firstdown or goal is not met
             // sends off an event to show UI to either restart game or to go back to the main menu
