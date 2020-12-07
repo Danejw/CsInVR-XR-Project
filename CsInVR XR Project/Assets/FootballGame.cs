@@ -20,7 +20,7 @@ namespace CSInVR.Football
         private float yardage;
         [SerializeField] private bool isMovingFirstDownMarker = false;
         [SerializeField] private float firstdownMarkSpeed = 1;
-        private Vector3 markerMoveTo;
+        [SerializeField] private Vector3 markerMoveTo;
 
         private bool isTouchdown;
         private GameObject catchingReciever;
@@ -135,7 +135,7 @@ namespace CSInVR.Football
         {
             Vector3 moveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, position.z);
 
-            if (distTillFirstdown < 0.1f)
+            if (Vector3.Distance(firstdownMark.transform.position , markerMoveTo) < 0.5f)
             {
                 isMovingFirstDownMarker = false;
             }
@@ -156,11 +156,12 @@ namespace CSInVR.Football
         public void NextPlay()
         {
             if (debug) Debug.Log("Getting ready to play the next play");
-         
-            // re-initializes the game into thw starting position
-            if (distTillFirstdown < 0)
+
+            if (firstdownMark.transform.position.z - yardage <= 0)
             {
-                setFirstDown(caughtPosition);
+                if (debug) Debug.Log("FirstDown, reseting to new firstdown position " + (firstdownMark.transform.position.z - yardage));
+
+                setFirstDown(hikePosition);
                 //setPositions(new Vector3(0, 0, caughtPosition.z));
                 ResetBall();
             }
@@ -205,11 +206,11 @@ namespace CSInVR.Football
 
             // calculate the yardage
             yardage = calcPlayYardage(caughtPosition, hikePosition);
-            markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, caughtPosition.z -yardage);
+            markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
             // move the firstdown markers
             isMovingFirstDownMarker = true;
 
-            if (debug) Debug.Log(distTillFirstdown + " yards until the next firstdown");
+            if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
 
             currentDown += 1;
         }
