@@ -8,6 +8,8 @@ namespace CSInVR
 {
     public class VelocityBasedHaptics : GrabbableHaptics
     {
+        public bool debug;
+
         public bool testVibration;
 
         [SerializeField]
@@ -75,7 +77,11 @@ namespace CSInVR
 
             amplitude = Mathf.Sqrt(amplitude * amplitude);
 
-            //Debug.Log("Amplitude: " + amplitude);
+            // make sure the value of amplitude is not negative
+            if (amplitude < 0)
+                amplitude = amplitude * -1;
+
+            if(debug) Debug.Log("Amplitude: " + amplitude);
 
             if (currentGrabber.HandSide == ControllerHand.None)
                 return;
@@ -84,7 +90,10 @@ namespace CSInVR
             {
                 InputBridge.Instance.GetLeftController().TryGetFeatureValue(CommonUsages.deviceVelocity, out velocity);
                 InputBridge.Instance.GetLeftController().SendHapticImpulse(0, amplitude + vibrationFloor, VibrateDuration);
+
+                InputBridge.Instance.GetLeftController().SendHapticImpulse(0, amplitude + vibrationFloor, VibrateDuration);
             }
+
             if (currentGrabber.HandSide == ControllerHand.Right)
             {
                 InputBridge.Instance.GetRightController().TryGetFeatureValue(CommonUsages.deviceVelocity, out velocity);
@@ -102,6 +111,10 @@ namespace CSInVR
             Mathf.Clamp(amplitude, 0, 1);
 
             amplitude = Mathf.Sqrt(amplitude * amplitude);
+
+            // make sure the value of amplitude is not negative
+            if (amplitude < 0)
+                amplitude = amplitude * -1;
 
             //Debug.Log("Amplitude: " + amplitude);
 

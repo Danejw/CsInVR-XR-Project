@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/New Scene.unity
-    guid: 12311d237e74e394e9d40c4d300faf17
+    path: Assets/Scenes/Football Home Scene.unity
+    guid: b3745da52856a604eaee8b8150b859c2
+  - enabled: 1
+    path: Assets/Scenes/Football Quarterback Challenge.unity
+    guid: d244277b149d26349a88e90c81fb95a9
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b3ac24369c63cb246976bcaf96adab11,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b240aeee0bc42ad4d86daded1f49d6c0,
       type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 2ec24d39f7b5ac84aad7e5df7b4fd3ea,
       type: 2}

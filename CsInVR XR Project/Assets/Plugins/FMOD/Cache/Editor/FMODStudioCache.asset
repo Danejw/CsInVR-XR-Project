@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6857265238419352872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Cube
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Cube
+  guid: ca6417dd6444fb40ad25085aa6e8bbec
+  Banks: []
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 202553
+--- !u!114 &-4961985594169520781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Collider
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Collider
+  guid: 0e991e743f61c045a1e86b59109420d4
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20
+--- !u!114 &-4522231344131449568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
+  Name: Master
+  lastModified: 637426757156421313
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4142784
+  Exists: 1
+--- !u!114 &-1923434288240872313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/SoundEffects
+  m_EditorClassIdentifier: 
+  Path: event:/Events/SoundEffects
+  guid: 96d3f4d72597684e99749eb131108012
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1246109764670849901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EvenNewerEvent/EvenNewerEvent
+  m_EditorClassIdentifier: 
+  Path: event:/EvenNewerEvent/EvenNewerEvent
+  guid: 21f8875c3055214bace1260e762e9c87
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1084308680359849963}
+  - {fileID: -4522231344131449568}
+  EditorEvents:
+  - {fileID: -4961985594169520781}
+  - {fileID: 2685217148431470256}
+  - {fileID: -1923434288240872313}
+  - {fileID: 206720452808306048}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -4522231344131449568}
+  StringsBanks:
+  - {fileID: 1084308680359849963}
+  stringsBankWriteTime: 637426757156466262
+  cacheVersion: 5
+--- !u!114 &206720452808306048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Music
+  guid: 2338d8a4c388d943b9d094ca745366ab
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 137381
+--- !u!114 &1084308680359849963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  lastModified: 637426757156466262
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1002
+  Exists: 1
+--- !u!114 &2685217148431470256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Events/Crowd
+  m_EditorClassIdentifier: 
+  Path: event:/Events/Crowd
+  guid: 8b7f0946e06535428cbe4205810ae8c8
+  Banks:
+  - {fileID: -4522231344131449568}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 42000
+--- !u!114 &6542986645156195019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MySounds.bank
+  m_EditorClassIdentifier: 
+  Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/MySounds.bank
+  Name: MySounds
+  lastModified: 637418904775182869
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 482
+  Exists: 0

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using BNG;
 
-namespace CSInVR {
-
+namespace CSInVR
+{
     /// <summary>
     /// Plays a Sound Clip OnCollisionEnter
     /// </summary>
