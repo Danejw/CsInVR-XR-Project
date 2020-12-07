@@ -51,6 +51,7 @@ namespace CSInVR.Football
             HikeBall.onMissedCatch += MissedCatchEvent;
             Reciever.onCatch += CatchEvent;
             Goal.onGoal += Touchdown;
+            Goal.onFirstDown += FirstdownEvent;
         }
 
         private void OnDisable()
@@ -58,6 +59,7 @@ namespace CSInVR.Football
             HikeBall.onMissedCatch -= MissedCatchEvent;
             Reciever.onCatch -= CatchEvent;
             Goal.onGoal -= Touchdown;
+            Goal.onFirstDown -= FirstdownEvent;
         }
 
         // Game Loop
@@ -192,6 +194,13 @@ namespace CSInVR.Football
             isTouchdown = true;
 
             // show UI to restart the game or to go to the main menu
+        }
+
+        private void FirstdownEvent()
+        {
+            if (debug) Debug.Log("Firstdown!");
+
+            
         }
 
         private void MissedCatchEvent()

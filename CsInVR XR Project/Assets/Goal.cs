@@ -13,12 +13,24 @@ namespace CSInVR.Football
         public delegate void OnGoal();
         public static event OnGoal onGoal;
 
+        public delegate void OnFirstDown();
+        public static event OnFirstDown onFirstDown;
+
+        private bool goalMade = false;
+
 
         private void MadeGoal()
         {
             onGoal?.Invoke();
 
-            if (debug) Debug.Log("The reciever has made a goal");
+            if (debug) Debug.Log("The Player has made a goal");
+        }
+
+        private void MadeFirstDown()
+        {
+            onFirstDown?.Invoke();
+
+            if (debug) Debug.Log("The reciever has made a firstdown");
         }
 
         private void OnTriggerEnter(Collider other)
@@ -29,9 +41,25 @@ namespace CSInVR.Football
 
                 if (reciever && reciever.hasCaught)
                 {
-                    MadeGoal();
+                    MadeFirstDown();
                 }
             }
+
+            if (other.gameObject.tag == "Player")
+            {
+                if (!goalMade)
+                {
+                    MadeGoal();
+                    goalMade = true;
+                }
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag == "Player")
+                if (goalMade)
+                    goalMade = false;
         }
 
     }

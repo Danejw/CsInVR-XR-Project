@@ -37,6 +37,7 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch += CatchSoundEvent;
             Goal.onGoal += GoalSoundEvent;
             HikeBall.onMissedCatch += MissedCatchSoundEvent;
+            Goal.onFirstDown += FirstdownSoundEvent;
         }
 
         // Un-Subscribe to Events
@@ -47,6 +48,7 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch -= CatchSoundEvent;
             Goal.onGoal -= GoalSoundEvent;
             HikeBall.onMissedCatch -= MissedCatchSoundEvent;
+            Goal.onFirstDown -= FirstdownSoundEvent;
         }
 
         private void ReadyToStartSoundEvent()
@@ -94,6 +96,15 @@ namespace CSInVR.Football.Fmod
             if (debug) Debug.Log("Goal sound has played");
         }
 
+        private void FirstdownSoundEvent()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 5);
+            eventInstance.start();
+
+            if (debug) Debug.Log("Firstdown sound has played");
+        }
+
         // test functionality
         private void Update()
         {
@@ -122,6 +133,11 @@ namespace CSInVR.Football.Fmod
                 if (Input.GetKeyDown(KeyCode.Alpha4))
                 {
                     GoalSoundEvent();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Alpha5))
+                {
+                    FirstdownSoundEvent();
                 }
             }
         }
