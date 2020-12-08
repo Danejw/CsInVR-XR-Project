@@ -134,6 +134,7 @@ MonoBehaviour:
   randomness: 4
   waypointRadius: 0.5
   isRunning: 0
+  distanceBetweenReciever: {x: 0, y: 0, z: -2}
   regenerateRoute: 0
 --- !u!1 &6900070520680185486
 GameObject:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CSInVR.Football
 {
@@ -137,6 +138,8 @@ namespace CSInVR.Football
 
         private void GameOver()
         {
+            StartCoroutine(EndGame());
+
             if (debug) Debug.Log("The Game is Over!");
 
             isGameOver = true;
@@ -145,6 +148,12 @@ namespace CSInVR.Football
 
             // happens when the firstdown or goal is not met
             // sends off an event to show UI to either restart game or to go back to the main menu
+        }
+
+        IEnumerator EndGame()
+        {
+            yield return new WaitForSeconds(10);
+            SceneManager.LoadScene(0);
         }
 
         public void NextPlay()

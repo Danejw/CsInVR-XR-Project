@@ -10,12 +10,15 @@ namespace CSInVR.Football.UI
         [SerializeField] private TMP_Text gameoverText;
         [SerializeField] private TMP_Text readyToStartText;
         [SerializeField] private TMP_Text firstdownText;
+        [SerializeField] private TMP_Text touchdownText;
+
 
         private void Start()
         {
             gameoverText.enabled = false;
             readyToStartText.enabled = false;
             firstdownText.enabled = false;
+            touchdownText.enabled = false;
         }
 
 
@@ -24,32 +27,47 @@ namespace CSInVR.Football.UI
             FootballGame.onReadyToStart += DisplayReadyToStart;
             FootballGame.onGameOver += DisplayGameOver;
             Goal.onFirstDown += DisplayFirstDown;
+            Goal.onGoal += DisplayTouchdown;
         }
 
         private void OnDisable()
         {
             FootballGame.onReadyToStart -= DisplayReadyToStart;
-            FootballGame.onGameOver += DisplayGameOver;
+            FootballGame.onGameOver -= DisplayGameOver;
             Goal.onFirstDown -= DisplayFirstDown;
+            Goal.onGoal += DisplayTouchdown;
+        }
+
+        private void DisplayTouchdown()
+        {
+            if (!touchdownText.enabled)
+                if (!readyToStartText.enabled && !gameoverText.enabled && !firstdownText.enabled)
+                    StartCoroutine(Counter(touchdownText));
         }
 
         private void DisplayFirstDown()
         {
-            StartCoroutine(Counter(firstdownText));
+            if (!firstdownText.enabled)
+                if (!readyToStartText.enabled && !gameoverText.enabled && !touchdownText.enabled)
+                    StartCoroutine(Counter(firstdownText));
         }
 
         private void DisplayReadyToStart()
         {
-            StartCoroutine(Counter(readyToStartText));
+            if (!readyToStartText.enabled)
+                if (!gameoverText.enabled && !firstdownText.enabled && !touchdownText.enabled)
+                    StartCoroutine(Counter(readyToStartText));
         }
 
         private void DisplayGameOver()
         {
-            StartCoroutine(Counter(gameoverText));
+            if (!gameoverText.enabled)
+                if (!readyToStartText.enabled && !firstdownText.enabled)
+                    StartCoroutine(Counter(gameoverText));
         }
 
         IEnumerator Counter(TMP_Text text)
-        {
+        {         
             text.enabled = true;
             yield return new WaitForSeconds(5);
             text.enabled = false;
