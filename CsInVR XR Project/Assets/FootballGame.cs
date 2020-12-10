@@ -202,7 +202,7 @@ namespace CSInVR.Football
         {
             if (debug) Debug.Log("Firstdown!");
 
-            
+            setFirstDown(hikePosition);
         }
 
         private void MissedCatchEvent()
@@ -219,13 +219,19 @@ namespace CSInVR.Football
 
             // calculate the yardage
             yardage = calcPlayYardage(caughtPosition, hikePosition);
-            firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
-            // move the firstdown markers
-            firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
+
+            if (calcPlayYardage(firstdownMark.transform.position, hikePosition) > yardage)
+            {
+                firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
+                // move the firstdown markers
+                firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
+                currentDown++;
+            }
+            else
+                FirstdownEvent();
+
 
             if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
-
-            currentDown += 1;
         }
 
         private void BlockEvent(GameObject blocker)
