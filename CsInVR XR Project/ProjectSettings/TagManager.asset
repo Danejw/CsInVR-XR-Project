@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Goal
   - Reciever
+  - Pocket
   layers:
   - Default
   - TransparentFX

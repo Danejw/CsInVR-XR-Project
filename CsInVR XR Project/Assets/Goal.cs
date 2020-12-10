@@ -13,26 +13,60 @@ namespace CSInVR.Football
         public delegate void OnGoal();
         public static event OnGoal onGoal;
 
+        public delegate void OnFirstDown();
+        public static event OnFirstDown onFirstDown;
+
+        [SerializeField] private bool goalMade = false;
+        private bool madeFirstdown = false;
+
+        [SerializeField] private int amtOfFirstdowns = 0;
+        public int minFirstdowns = 3;
 
         private void MadeGoal()
         {
             onGoal?.Invoke();
 
-            if (debug) Debug.Log("The reciever has made a goal");
+            if (debug) Debug.Log("The Player has made a goal");
+        }
+
+        private void MadeFirstDown()
+        {
+            onFirstDown?.Invoke();
+
+            if (debug) Debug.Log("The reciever has made a firstdown");
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Reciever")
+            if (other.gameObject.tag == "Player")
             {
-                Reciever reciever = other.GetComponent<Reciever>();
-
-                if (reciever && reciever.hasCaught)
+                if (amtOfFirstdowns < minFirstdowns && !madeFirstdown)
+                {
+                    amtOfFirstdowns++;
+                    MadeFirstDown();
+                    madeFirstdown = true;
+                }
+                else if (amtOfFirstdowns >= minFirstdowns && !goalMade)
                 {
                     MadeGoal();
-                }
+                    goalMade = true;
+                }       
             }
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                if (madeFirstdown)
+                    madeFirstdown = false;
+
+                if (goalMade)
+                {
+                    goalMade = false;
+                    amtOfFirstdowns = 0;
+                }
+            }
+        }
     }
 }
