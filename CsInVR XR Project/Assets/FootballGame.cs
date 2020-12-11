@@ -27,10 +27,13 @@ namespace CSInVR.Football
 
         [SerializeField] private float distTillFirstdown;
         [SerializeField] private Vector3 firstDownIncrement = new Vector3(0, 0, 10);
+        [SerializeField] private Vector3 goalIncrement = new Vector3(0, 0, 50);
 
         public GameObject[] recievers;
         public GameObject player;
-        public GameObject firstdownMark;
+        public FirstdownMarker firstdownMark;
+        public GameObject firstdownMarkChains;
+        public GoalMarker goalMarker;
         public Goal goal;
 
         //events
@@ -57,7 +60,7 @@ namespace CSInVR.Football
         {
             HikeBall.onMissedCatch += MissedCatchEvent;
             Reciever.onCatch += CatchEvent;
-            Goal.onGoal += Touchdown;
+            //Goal.onGoal += TouchdownEvent;
             Goal.onFirstDown += FirstdownEvent;
             Blocker.onBlock += BlockEvent;
         }
@@ -66,7 +69,7 @@ namespace CSInVR.Football
         {
             HikeBall.onMissedCatch -= MissedCatchEvent;
             Reciever.onCatch -= CatchEvent;
-            Goal.onGoal -= Touchdown;
+            //Goal.onGoal -= TouchdownEvent;
             Goal.onFirstDown -= FirstdownEvent;
             Blocker.onBlock -= BlockEvent;
         }
@@ -88,9 +91,26 @@ namespace CSInVR.Football
                 {
                     print("The ball has been hiked and is active");
                 }
+
+                // set firstdown marker on or off
+                if (calcDistanceYardage(goal.transform.position, hikePosition) < calcDistanceYardage(firstdownMark.transform.position, hikePosition))
+                    if (firstdownMarkChains.activeSelf) firstdownMarkChains.SetActive(false);
+                if (calcDistanceYardage(goal.transform.position, hikePosition) > calcDistanceYardage(firstdownMark.transform.position, hikePosition))
+                    if (!firstdownMarkChains.activeSelf) firstdownMarkChains.SetActive(true);
+
+                // Touchdown
+                if (!isTouchdown)
+                {
+                    if (goalMarker.transform.position.z - hikePosition.z <= 0)
+                    {
+                        TouchdownEvent();
+                    }
+                }
             }
             else
-                GameOver();       
+                GameOver();
+
+
         }
 
         // Functions
@@ -99,6 +119,7 @@ namespace CSInVR.Football
             if (debug) Debug.Log("Initializing game...");
 
             setPositions(position);
+            setGoal(position);
             setFirstDown(position);
             ResetBall();
 
@@ -122,6 +143,17 @@ namespace CSInVR.Football
 
             // sets the player pocket position
             if (player) player.transform.position = position + new Vector3(0, 0, -3);
+
+            
+        }
+
+        private void setGoal(Vector3 position)
+        {
+            if (debug) Debug.Log("Setting the goal mark");
+
+            // moves new firstdown to 'x' units plus caught position
+            goalMarker.markerMoveTo = position + goalIncrement;
+            goalMarker.isMovingGoalMarker = true;
         }
 
         private void setFirstDown(Vector3 position)
@@ -131,8 +163,8 @@ namespace CSInVR.Football
             // sets the current down to zero
             currentDown = 1;
             // moves new firstdown to 'x' units plus caught position
-            firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = position + firstDownIncrement;
-            firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
+            firstdownMark.markerMoveTo = position + firstDownIncrement;
+            firstdownMark.isMovingFirstDownMarker = true;
             // send off firstdown event
             onFirstdown?.Invoke();
         }
@@ -190,11 +222,15 @@ namespace CSInVR.Football
 
 
         // Events
-        private void Touchdown()
+        private void TouchdownEvent()
         {
             if (debug) Debug.Log("Touchdown!");
 
             isTouchdown = true;
+
+            goal.MadeGoal();
+
+            StartCoroutine(DelayedInitGame(10));
 
             // show UI to restart the game or to go to the main menu
         }
@@ -219,14 +255,19 @@ namespace CSInVR.Football
             if (debug) Debug.Log("The ball was caught by " + catchingReciever.name);
 
             // calculate the yardage
-            yardage = calcPlayYardage(caughtPosition, hikePosition);
+            yardage = calcDistanceYardage(caughtPosition, hikePosition);
 
-            if (calcPlayYardage(firstdownMark.transform.position, hikePosition) > yardage)
+            if (calcDistanceYardage(firstdownMark.transform.position, hikePosition) > yardage)
             {
-                firstdownMark.GetComponent<FirstdownMarker>().markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
                 // move the firstdown markers
-                firstdownMark.GetComponent<FirstdownMarker>().isMovingFirstDownMarker = true;
+                firstdownMark.markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
+                firstdownMark.isMovingFirstDownMarker = true;
+
                 currentDown++;
+
+                // move goal markers
+                goalMarker.markerMoveTo = new Vector3(goalMarker.transform.position.x, goalMarker.transform.position.y, goalMarker.transform.position.z - yardage);
+                goalMarker.isMovingGoalMarker = true;
             }
             else
                 FirstdownEvent();
@@ -243,13 +284,18 @@ namespace CSInVR.Football
         }
 
 
-
+        //enumerators
+        private IEnumerator DelayedInitGame(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            InitGame(startingPosition);
+        }
 
 
         //uitls
-        public float calcPlayYardage(Vector3 position1, Vector3 position2)
+        public float calcDistanceYardage(Vector3 position1, Vector3 position2)
         {
-            if (debug) Debug.Log("The catch was at " + position1 + " from " + position2);
+            if (debug) Debug.Log("The yardage is " + position1 + " from " + position2);
 
             float distance = Mathf.Round( Mathf.Sqrt( Mathf.Pow(position1.z, 2) - Mathf.Pow(position2.z, 2) ) );
                   
