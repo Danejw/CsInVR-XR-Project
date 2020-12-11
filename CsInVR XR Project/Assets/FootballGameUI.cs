@@ -26,7 +26,7 @@ namespace CSInVR.Football.UI
         {
             FootballGame.onReadyToStart += DisplayReadyToStart;
             FootballGame.onGameOver += DisplayGameOver;
-            Goal.onFirstDown += DisplayFirstDown;
+            FootballGame.onFirstdown += DisplayFirstDown;
             Goal.onGoal += DisplayTouchdown;
         }
 
@@ -34,8 +34,8 @@ namespace CSInVR.Football.UI
         {
             FootballGame.onReadyToStart -= DisplayReadyToStart;
             FootballGame.onGameOver -= DisplayGameOver;
-            Goal.onFirstDown -= DisplayFirstDown;
-            Goal.onGoal += DisplayTouchdown;
+            FootballGame.onFirstdown -= DisplayFirstDown;
+            Goal.onGoal -= DisplayTouchdown;
         }
 
         private void DisplayTouchdown()

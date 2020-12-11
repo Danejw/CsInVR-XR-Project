@@ -31,6 +31,7 @@ namespace CSInVR.Football
         public GameObject[] recievers;
         public GameObject player;
         public GameObject firstdownMark;
+        public Goal goal;
 
         //events
         public delegate void OnFirstDown();

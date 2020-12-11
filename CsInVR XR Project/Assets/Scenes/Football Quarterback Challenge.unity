@@ -5054,6 +5054,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 756611735}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &765127386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2124312588894037726, guid: 6aa00fb85a3197a4986106de632fcbf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 848357197}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23741f3d82cc374688c297fbad22f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &766909743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,7 +5996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   currentDown: 1
-  maxDown: 5
+  maxDown: 4
   ball: {fileID: 1586048031}
   startingPosition: {x: 0, y: 0, z: 0}
   distTillFirstdown: 0
@@ -5992,6 +6004,7 @@ MonoBehaviour:
   recievers: []
   player: {fileID: 803405423}
   firstdownMark: {fileID: 1187415670}
+  goal: {fileID: 765127386}
 --- !u!1001 &953312611
 PrefabInstance:
   m_ObjectHideFlags: 0

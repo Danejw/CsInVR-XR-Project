@@ -22,14 +22,15 @@ namespace CSInVR.Football
         [SerializeField] private int amtOfFirstdowns = 0;
         public int minFirstdowns = 3;
 
-        private void MadeGoal()
+
+        public void MadeGoal()
         {
             onGoal?.Invoke();
 
             if (debug) Debug.Log("The Player has made a goal");
         }
 
-        private void MadeFirstDown()
+        public void MadeFirstDown()
         {
             onFirstDown?.Invoke();
 
