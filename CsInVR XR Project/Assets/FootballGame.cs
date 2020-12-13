@@ -34,9 +34,13 @@ namespace CSInVR.Football
         public FirstdownMarker firstdownMark;
         public GameObject firstdownMarkChains;
         public GoalMarker goalMarker;
+        public GameObject hikeMarker;
         public Goal goal;
 
         //events
+        public delegate void OnGameStart();
+        public static event OnGameStart onGameStart;
+
         public delegate void OnFirstDown();
         public static event OnFirstDown onFirstdown;
 
@@ -104,8 +108,11 @@ namespace CSInVR.Football
                     if (goalMarker.transform.position.z - hikePosition.z <= 0)
                     {
                         TouchdownEvent();
+                        ToggleHideHikeMarker(false);
                     }
                 }
+                else if (goalMarker.transform.position.z - hikePosition.z > 0)
+                        ToggleHideHikeMarker(true);
             }
             else
                 GameOver();
@@ -126,6 +133,8 @@ namespace CSInVR.Football
             isTouchdown = false;
             isGameOver = false;
             currentDown = 1;
+
+            onGameStart?.Invoke();
         }
 
         private void setPositions(Vector3 position)
@@ -222,6 +231,11 @@ namespace CSInVR.Football
 
 
         // Events
+        private void OnGameStartEvent()
+        {
+
+        }
+
         private void TouchdownEvent()
         {
             if (debug) Debug.Log("Touchdown!");
@@ -307,6 +321,38 @@ namespace CSInVR.Football
         public float GetDistanceTillFirstdown()
         {
             return distTillFirstdown;
+        }
+
+        public void ToggleHideHikeMarker(bool value)
+        {
+            // gets a list of children of the hike marker
+            List<Transform> hikeChildren = new List<Transform>();
+
+            for (int i = 0; i < hikeMarker.transform.childCount; i++)
+                hikeChildren.Add(hikeMarker.transform.GetChild(i));
+                    
+            bool debouncer = false;
+
+            if (value && !debouncer)
+            {
+                if (hikeChildren != null)
+                    foreach (Transform child in hikeChildren)
+                        child.gameObject.SetActive(true);
+
+                if (debug) Debug.Log("The hike marker is now active");
+
+                debouncer = true;
+            }
+            else if (!value && !debouncer)
+            {
+                if (hikeChildren != null)
+                    foreach (Transform child in hikeChildren)
+                        child.gameObject.SetActive(false);
+
+                if (debug) Debug.Log("The hike marker is hidden");
+
+                debouncer = true;
+            }
         }
     }
 }

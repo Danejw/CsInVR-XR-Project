@@ -39,7 +39,9 @@ namespace CSInVR.Football.Fmod
             HikeBall.onMissedCatch += MissedCatchSoundEvent;
             Goal.onFirstDown += FirstdownSoundEvent;
             FootballGame.onReadyToStart += ReadyToStartSoundEvent;
+            FootballGame.onGameStart += GameStartSoundEvent;
             Blocker.onBlock += BlockEvent;
+            FootballGame.onGameOver += GameOverEvent;
         }
 
         // Un-Subscribe to Events
@@ -52,7 +54,18 @@ namespace CSInVR.Football.Fmod
             HikeBall.onMissedCatch -= MissedCatchSoundEvent;
             Goal.onFirstDown -= FirstdownSoundEvent;
             FootballGame.onReadyToStart -= ReadyToStartSoundEvent;
-            Blocker.onBlock += BlockEvent;
+            FootballGame.onGameStart -= GameStartSoundEvent;
+            FootballGame.onGameOver -= GameOverEvent;
+            Blocker.onBlock -= BlockEvent;
+        }
+
+        private void GameOverEvent()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 3);
+            eventInstance.start();
+
+            if (debug) Debug.Log("GameOver sound has played");
         }
 
         private void BlockEvent(GameObject blocker)
@@ -66,6 +79,7 @@ namespace CSInVR.Football.Fmod
 
         private void ReadyToStartSoundEvent()
         {
+            // Referee Whistle
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 0);
             eventInstance.start();
@@ -73,16 +87,25 @@ namespace CSInVR.Football.Fmod
             if (debug) Debug.Log("Ready to start sound has played");
         }
 
+        private void GameStartSoundEvent()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 8);
+            eventInstance.start();
+
+            if (debug) Debug.Log("Game start sound has played");
+        }
+
         private void HikeSoundEvent()
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 1);
+            RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 6);
             eventInstance.start();
 
             if (debug) Debug.Log("Hike sound has played");
         }
 
-        private void CatchSoundEvent(GameObject reviever)
+        private void CatchSoundEvent(GameObject reciever)
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             RuntimeManager.StudioSystem.setParameterByName("SoundEffect", 2);
