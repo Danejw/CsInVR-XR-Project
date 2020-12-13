@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace CSInVR.Football
 {
-    [RequireComponent(typeof(Collider))]
-
     public class Goal : MonoBehaviour
     {
         public bool debug;
@@ -13,26 +11,28 @@ namespace CSInVR.Football
         public delegate void OnGoal();
         public static event OnGoal onGoal;
 
+        public delegate void OnFirstDown();
+        public static event OnFirstDown onFirstDown;
 
-        private void MadeGoal()
+        [SerializeField] private bool goalMade = false;
+        private bool madeFirstdown = false;
+
+        public int amtOfFirstdowns = 0;
+        public int minFirstdowns = 3;
+
+
+        public void MadeGoal()
         {
             onGoal?.Invoke();
 
-            if (debug) Debug.Log("The reciever has made a goal");
+            if (debug) Debug.Log("The Player has made a goal");
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void MadeFirstDown()
         {
-            if (other.gameObject.tag == "Reciever")
-            {
-                Reciever reciever = other.GetComponent<Reciever>();
+            onFirstDown?.Invoke();
 
-                if (reciever && reciever.hasCaught)
-                {
-                    MadeGoal();
-                }
-            }
+            if (debug) Debug.Log("The reciever has made a firstdown");
         }
-
     }
 }

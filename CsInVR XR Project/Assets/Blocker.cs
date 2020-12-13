@@ -35,6 +35,11 @@ namespace CSInVR.Football
         private int count;
         [SerializeField] private bool isRunning = false;
 
+        private Reciever reciever;
+        [SerializeField] private Vector3 distanceBetweenReciever = new Vector3(0, 0, -1);
+
+        public Transform player;
+
         public bool regenerateRoute;
 
 
@@ -49,6 +54,8 @@ namespace CSInVR.Football
         {
             HikeBall.onHike += Run;
             Reciever.onCatch += CatchEvent;
+            Blocker.onBlock += BlockEvent;
+
             hasBlocked = false;
             isRunning = false;
 
@@ -59,6 +66,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike -= Run;
             Reciever.onCatch -= CatchEvent;
+            Blocker.onBlock += BlockEvent;
         }
 
         private void Update()
@@ -70,7 +78,14 @@ namespace CSInVR.Football
             }
 
             if (isRunning)
-                MoveAlongRoute();
+            {
+                if (reciever)
+                    Follow(reciever.transform);
+                else
+                    MoveAlongRoute();
+            }
+
+
         }
 
 
@@ -122,6 +137,16 @@ namespace CSInVR.Football
             }
             else
                 hasBlocked = false;
+
+            if (other.gameObject.tag == "Reciever")
+            {
+                reciever = other.GetComponent<Reciever>();
+            }
+
+            if (other.gameObject.tag == "Pocket")
+            {
+                player = other.GetComponent<Transform>();
+            }
         }
 
         private void ResetPosition()
@@ -160,7 +185,7 @@ namespace CSInVR.Football
                 count++;
 
                 if (count >= divisionPoints.Count)
-                    isRunning = false;
+                    Follow(player);
             }
             else
                 transform.position = Vector3.MoveTowards(transform.position, divisionPoints[count].position, Time.deltaTime * blockerSpeed);
@@ -193,8 +218,20 @@ namespace CSInVR.Football
             if (debug) Debug.Log("Regenerating " + this.name + "'s route");
         }
 
+        private void Follow(Transform position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, position.position + distanceBetweenReciever, Time.deltaTime * blockerSpeed);
+
+            if (debug) Debug.Log("Following " + reciever.name);
+        }
+
         // events
         private void CatchEvent(GameObject reciever)
+        {
+            isRunning = false;
+        }
+
+        private void BlockEvent(GameObject blocker)
         {
             isRunning = false;
         }

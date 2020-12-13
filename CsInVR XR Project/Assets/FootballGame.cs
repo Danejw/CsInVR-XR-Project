@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CSInVR.Football
 {
@@ -18,23 +19,36 @@ namespace CSInVR.Football
         public Vector3 startingPosition;
 
         private float yardage;
-        [SerializeField] private bool isMovingFirstDownMarker = false;
-        [SerializeField] private float firstdownMarkSpeed = 1;
-        [SerializeField] private Vector3 markerMoveTo;
 
         private bool isTouchdown;
         private GameObject catchingReciever;
+        private GameObject blockingBlocker;
+        private bool isGameOver;
 
         [SerializeField] private float distTillFirstdown;
         [SerializeField] private Vector3 firstDownIncrement = new Vector3(0, 0, 10);
+        [SerializeField] private Vector3 goalIncrement = new Vector3(0, 0, 50);
 
         public GameObject[] recievers;
         public GameObject player;
-        public GameObject firstdownMark;
+        public FirstdownMarker firstdownMark;
+        public GameObject firstdownMarkChains;
+        public GoalMarker goalMarker;
+        public GameObject hikeMarker;
+        public Goal goal;
 
         //events
+        public delegate void OnGameStart();
+        public static event OnGameStart onGameStart;
+
         public delegate void OnFirstDown();
         public static event OnFirstDown onFirstdown;
+
+        public delegate void OnReadyToStart();
+        public static event OnReadyToStart onReadyToStart;
+
+        public delegate void OnGameOver();
+        public static event OnGameOver onGameOver;
 
 
         private void Awake()
@@ -50,14 +64,18 @@ namespace CSInVR.Football
         {
             HikeBall.onMissedCatch += MissedCatchEvent;
             Reciever.onCatch += CatchEvent;
-            Goal.onGoal += Touchdown;
+            //Goal.onGoal += TouchdownEvent;
+            Goal.onFirstDown += FirstdownEvent;
+            Blocker.onBlock += BlockEvent;
         }
 
         private void OnDisable()
         {
             HikeBall.onMissedCatch -= MissedCatchEvent;
             Reciever.onCatch -= CatchEvent;
-            Goal.onGoal -= Touchdown;
+            //Goal.onGoal -= TouchdownEvent;
+            Goal.onFirstDown -= FirstdownEvent;
+            Blocker.onBlock -= BlockEvent;
         }
 
         // Game Loop
@@ -71,20 +89,35 @@ namespace CSInVR.Football
         {
             distTillFirstdown = firstdownMark.transform.position.z - hikePosition.z;
 
-            if (isMovingFirstDownMarker)
-                moveFirstDownMarkers(markerMoveTo);
-
-
-
             if (currentDown <= maxDown || isTouchdown)
             {
                 if (ball.GetBallIsActive() && ball.hasHiked)
                 {
                     print("The ball has been hiked and is active");
-                }                 
+                }
+
+                // set firstdown marker on or off
+                if (calcDistanceYardage(goal.transform.position, hikePosition) < calcDistanceYardage(firstdownMark.transform.position, hikePosition))
+                    if (firstdownMarkChains.activeSelf) firstdownMarkChains.SetActive(false);
+                if (calcDistanceYardage(goal.transform.position, hikePosition) > calcDistanceYardage(firstdownMark.transform.position, hikePosition))
+                    if (!firstdownMarkChains.activeSelf) firstdownMarkChains.SetActive(true);
+
+                // Touchdown
+                if (!isTouchdown)
+                {
+                    if (goalMarker.transform.position.z - hikePosition.z <= 0)
+                    {
+                        TouchdownEvent();
+                        ToggleHideHikeMarker(false);
+                    }
+                }
+                else if (goalMarker.transform.position.z - hikePosition.z > 0)
+                        ToggleHideHikeMarker(true);
             }
-            
-            
+            else
+                GameOver();
+
+
         }
 
         // Functions
@@ -93,11 +126,15 @@ namespace CSInVR.Football
             if (debug) Debug.Log("Initializing game...");
 
             setPositions(position);
+            setGoal(position);
             setFirstDown(position);
             ResetBall();
 
             isTouchdown = false;
+            isGameOver = false;
             currentDown = 1;
+
+            onGameStart?.Invoke();
         }
 
         private void setPositions(Vector3 position)
@@ -115,6 +152,17 @@ namespace CSInVR.Football
 
             // sets the player pocket position
             if (player) player.transform.position = position + new Vector3(0, 0, -3);
+
+            
+        }
+
+        private void setGoal(Vector3 position)
+        {
+            if (debug) Debug.Log("Setting the goal mark");
+
+            // moves new firstdown to 'x' units plus caught position
+            goalMarker.markerMoveTo = position + goalIncrement;
+            goalMarker.isMovingGoalMarker = true;
         }
 
         private void setFirstDown(Vector3 position)
@@ -124,55 +172,53 @@ namespace CSInVR.Football
             // sets the current down to zero
             currentDown = 1;
             // moves new firstdown to 'x' units plus caught position
-            markerMoveTo = position + firstDownIncrement;
-            isMovingFirstDownMarker = true;
+            firstdownMark.markerMoveTo = position + firstDownIncrement;
+            firstdownMark.isMovingFirstDownMarker = true;
             // send off firstdown event
             onFirstdown?.Invoke();
         }
 
-        // Moves the firstdown marker in the z direction
-        private void moveFirstDownMarkers(Vector3 position)
-        {
-            Vector3 moveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, position.z);
-
-            if (Vector3.Distance(firstdownMark.transform.position , markerMoveTo) < 0.5f)
-            {
-                isMovingFirstDownMarker = false;
-            }
-            else
-                firstdownMark.transform.position = Vector3.MoveTowards(firstdownMark.transform.position, moveTo, Time.deltaTime * firstdownMarkSpeed);
-
-            if (debug) Debug.Log("Moving along " + firstdownMark.name + "'s route to " + moveTo);
-        }
-
         private void GameOver()
         {
+            StartCoroutine(EndGame());
+
             if (debug) Debug.Log("The Game is Over!");
+
+            isGameOver = true;
+
+            onGameOver?.Invoke();
 
             // happens when the firstdown or goal is not met
             // sends off an event to show UI to either restart game or to go back to the main menu
+        }
+
+        IEnumerator EndGame()
+        {
+            yield return new WaitForSeconds(10);
+            SceneManager.LoadScene(0);
         }
 
         public void NextPlay()
         {
             if (debug) Debug.Log("Getting ready to play the next play");
 
-            if (firstdownMark.transform.position.z - yardage <= 0)
+            if (firstdownMark.transform.position.z <= 0)
             {
                 if (debug) Debug.Log("FirstDown, reseting to new firstdown position " + (firstdownMark.transform.position.z - yardage));
 
                 setFirstDown(hikePosition);
+                onReadyToStart?.Invoke();
                 //setPositions(new Vector3(0, 0, caughtPosition.z));
                 ResetBall();
             }
             else
             {
-                //setPositions(caughtPosition);
+                if (debug) Debug.Log("Firstdown position " + (firstdownMark.transform.position.z - yardage));
+
+                onReadyToStart?.Invoke();
                 ResetBall();
             }           
         }
-
-
 
 
         private void ResetBall()
@@ -185,13 +231,29 @@ namespace CSInVR.Football
 
 
         // Events
-        private void Touchdown()
+        private void OnGameStartEvent()
+        {
+
+        }
+
+        private void TouchdownEvent()
         {
             if (debug) Debug.Log("Touchdown!");
 
             isTouchdown = true;
 
+            goal.MadeGoal();
+
+            StartCoroutine(DelayedInitGame(10));
+
             // show UI to restart the game or to go to the main menu
+        }
+
+        private void FirstdownEvent()
+        {
+            if (debug) Debug.Log("Firstdown!");
+
+            setFirstDown(hikePosition);
         }
 
         private void MissedCatchEvent()
@@ -204,25 +266,50 @@ namespace CSInVR.Football
             catchingReciever = reciever;
             caughtPosition = reciever.transform.position;
 
+            if (debug) Debug.Log("The ball was caught by " + catchingReciever.name);
+
             // calculate the yardage
-            yardage = calcPlayYardage(caughtPosition, hikePosition);
-            markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
-            // move the firstdown markers
-            isMovingFirstDownMarker = true;
+            yardage = calcDistanceYardage(caughtPosition, hikePosition);
+
+            if (calcDistanceYardage(firstdownMark.transform.position, hikePosition) > yardage)
+            {
+                // move the firstdown markers
+                firstdownMark.markerMoveTo = new Vector3(firstdownMark.transform.position.x, firstdownMark.transform.position.y, firstdownMark.transform.position.z - yardage);
+                firstdownMark.isMovingFirstDownMarker = true;
+
+                currentDown++;
+
+                // move goal markers
+                goalMarker.markerMoveTo = new Vector3(goalMarker.transform.position.x, goalMarker.transform.position.y, goalMarker.transform.position.z - yardage);
+                goalMarker.isMovingGoalMarker = true;
+            }
+            else
+                FirstdownEvent();
+
 
             if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
+        }
+
+        private void BlockEvent(GameObject blocker)
+        {
+            if (debug) Debug.Log("The ball was blocked by " + blocker.name);
 
             currentDown += 1;
         }
 
 
-
+        //enumerators
+        private IEnumerator DelayedInitGame(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            InitGame(startingPosition);
+        }
 
 
         //uitls
-        public float calcPlayYardage(Vector3 position1, Vector3 position2)
+        public float calcDistanceYardage(Vector3 position1, Vector3 position2)
         {
-            if (debug) Debug.Log("The catch was at " + position1 + " from " + position2);
+            if (debug) Debug.Log("The yardage is " + position1 + " from " + position2);
 
             float distance = Mathf.Round( Mathf.Sqrt( Mathf.Pow(position1.z, 2) - Mathf.Pow(position2.z, 2) ) );
                   
@@ -234,6 +321,38 @@ namespace CSInVR.Football
         public float GetDistanceTillFirstdown()
         {
             return distTillFirstdown;
+        }
+
+        public void ToggleHideHikeMarker(bool value)
+        {
+            // gets a list of children of the hike marker
+            List<Transform> hikeChildren = new List<Transform>();
+
+            for (int i = 0; i < hikeMarker.transform.childCount; i++)
+                hikeChildren.Add(hikeMarker.transform.GetChild(i));
+                    
+            bool debouncer = false;
+
+            if (value && !debouncer)
+            {
+                if (hikeChildren != null)
+                    foreach (Transform child in hikeChildren)
+                        child.gameObject.SetActive(true);
+
+                if (debug) Debug.Log("The hike marker is now active");
+
+                debouncer = true;
+            }
+            else if (!value && !debouncer)
+            {
+                if (hikeChildren != null)
+                    foreach (Transform child in hikeChildren)
+                        child.gameObject.SetActive(false);
+
+                if (debug) Debug.Log("The hike marker is hidden");
+
+                debouncer = true;
+            }
         }
     }
 }

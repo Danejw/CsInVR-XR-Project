@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3967180414210082861}
   - component: {fileID: 3967180414210082860}
-  - component: {fileID: 3967180414210082859}
   - component: {fileID: 3967180414210082858}
   - component: {fileID: 3967180414210082857}
   m_Layer: 0
@@ -27,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3967180414210082856}
-  m_LocalRotation: {x: 0.15444498, y: -0.17939216, z: -0.9711598, w: -0.028528996}
+  m_LocalRotation: {x: -0.15444249, y: 0.17938922, z: 0.97116077, w: 0.028528228}
   m_LocalPosition: {x: 0.116321936, y: 0.5328759, z: -0.389126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
+  m_LocalEulerAnglesHint: {x: -159.069, y: 161.928, z: -0.000015258789}
 --- !u!20 &3967180414210082860
 Camera:
   m_ObjectHideFlags: 0
@@ -59,7 +58,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5000
-  field of view: 40
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -68,7 +67,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 4100f8873ab868e42bd4175a92d0ccc7, type: 2}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3967180414210082859
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3967180414210082856}
-  m_Enabled: 0
 --- !u!114 &3967180414210082858
 MonoBehaviour:
   m_ObjectHideFlags: 0
