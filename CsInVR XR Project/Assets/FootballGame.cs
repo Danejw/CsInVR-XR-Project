@@ -254,6 +254,7 @@ namespace CSInVR.Football
             if (debug) Debug.Log("Firstdown!");
 
             setFirstDown(hikePosition);
+            setGoal(hikePosition);
         }
 
         private void MissedCatchEvent()
@@ -284,10 +285,16 @@ namespace CSInVR.Football
                 goalMarker.isMovingGoalMarker = true;
             }
             else
+            {
                 FirstdownEvent();
 
+                // move goal markers
+                goalMarker.markerMoveTo = new Vector3(goalMarker.transform.position.x, goalMarker.transform.position.y, goalMarker.transform.position.z - yardage);
+                goalMarker.isMovingGoalMarker = true;
+            }
 
-            if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
+
+                if (debug) Debug.Log(firstdownMark.transform.position.z - yardage + " yards until the next firstdown");
         }
 
         private void BlockEvent(GameObject blocker)
