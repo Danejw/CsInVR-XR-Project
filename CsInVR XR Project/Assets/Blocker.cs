@@ -42,6 +42,9 @@ namespace CSInVR.Football
         public Transform ball;
         [SerializeField] private Vector3 distanceBetweenBall = new Vector3(0, 0, -0.2f);
 
+        public Transform player;
+        [SerializeField] private Vector3 distanceBetweenPlayer = new Vector3(0, 0, -0.2f);
+
         public bool regenerateRoute;
 
 
@@ -183,7 +186,7 @@ namespace CSInVR.Football
         }
 
         private void MoveAlongRoute()
-        {       
+        {
             if (Vector3.Distance(divisionPoints[count].position, transform.position) < waypointRadius)
             {
                 count++;
@@ -192,8 +195,12 @@ namespace CSInVR.Football
                     Follow(ball, distanceBetweenBall);
             }
             else
+            {
                 transform.position = Vector3.MoveTowards(transform.position, divisionPoints[count].position, Time.deltaTime * blockerSpeed);
-           
+                transform.LookAt(divisionPoints[count].position);
+            }
+
+
             if (debug) Debug.Log("Moving along " + this.name + "'s route");
         }
 
@@ -201,6 +208,8 @@ namespace CSInVR.Football
         {
             isRunning = false;
             count = 0;
+
+            reciever = null;
 
             if (divisionPoints != null)
             {
@@ -225,6 +234,9 @@ namespace CSInVR.Football
         private void Follow(Transform position, Vector3 distance)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(position.position.x, 0, position.position.z) + distance, Time.deltaTime * blockerSpeed);
+
+            if (reciever) transform.LookAt(reciever.transform);
+            else if (player) transform.LookAt(player.transform);
 
             if (debug) Debug.Log("Following " + position.name);
         }
