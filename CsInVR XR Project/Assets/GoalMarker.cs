@@ -13,6 +13,8 @@ namespace CSInVR.Football
         public float goalMarkSpeed = 6;
         public Vector3 markerMoveTo;
 
+        [SerializeField] private float precision = .01f;
+
 
         // Update is called once per frame
         void Update()
@@ -28,7 +30,7 @@ namespace CSInVR.Football
         {
             Vector3 moveTo = new Vector3(transform.position.x, transform.position.y, position.z);
 
-            if (Vector3.Distance(transform.position, markerMoveTo) < 0.2f)
+            if (Vector3.Distance(transform.position, markerMoveTo) < precision)
             {
                 isMovingGoalMarker = false;
             }

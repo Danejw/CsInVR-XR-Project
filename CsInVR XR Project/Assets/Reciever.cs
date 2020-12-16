@@ -168,8 +168,11 @@ namespace CSInVR.Football
                     isRunning = false;
             }
             else
+            {
                 transform.position = Vector3.MoveTowards(transform.position, divisionPoints[count].position, Time.deltaTime * recieverSpeed);
-           
+                transform.LookAt(divisionPoints[count].position);
+            }
+
             if (debug) Debug.Log("Moving along " + this.name + "'s route");
         }
 
