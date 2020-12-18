@@ -36,7 +36,7 @@ namespace BNG {
         /// <summary>
         /// The grabber that is currently holding us. Null if not being held
         /// </summary>        
-        protected List<Grabber> heldByGrabbers;
+        public List<Grabber> heldByGrabbers;
 
         /// <summary>
         /// Save whether or not the RigidBody was kinematic on Start.
