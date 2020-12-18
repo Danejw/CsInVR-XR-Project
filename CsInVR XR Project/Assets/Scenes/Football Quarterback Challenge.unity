@@ -835,7 +835,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10942
+  m_Name: pb_Mesh190682
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18181,6 +18181,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1919374833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1954988475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3343843094430850056, guid: 40ff52434143e8f4d850cdd4d74d152d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1608976236854642802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1954988477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954988475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446cfdb5871c1d145a3872e540bde3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
 --- !u!1001 &1959529106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24739,7 +24758,7 @@ PrefabInstance:
     - target: {fileID: 1608976235471119469, guid: 40ff52434143e8f4d850cdd4d74d152d,
         type: 3}
       propertyPath: debug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1608976235471119469, guid: 40ff52434143e8f4d850cdd4d74d152d,
         type: 3}
@@ -24825,6 +24844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HikeBall_Fmod
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406571232196143201, guid: 40ff52434143e8f4d850cdd4d74d152d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7874496158222457158, guid: 40ff52434143e8f4d850cdd4d74d152d,
         type: 3}

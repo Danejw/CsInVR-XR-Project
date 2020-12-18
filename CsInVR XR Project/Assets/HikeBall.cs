@@ -12,7 +12,7 @@ namespace CSInVR.Football
         public bool debug;
 
         [SerializeField] private bool spiral = true;
-        [SerializeField] private float minSpiralVelocity = 5;
+        public float minSpiralVelocity = 5;
         [SerializeField] private float spiralAngleAmt = 180;
         [SerializeField] private float spiralSpinSpeed = 10;
 
