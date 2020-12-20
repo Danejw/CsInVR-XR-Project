@@ -16,6 +16,8 @@ namespace BNG {
         [Tooltip("If true this object will update the VRUISystem's Left or Right Transform property")]
         public bool AutoUpdateUITransforms = true;
 
+        public Vector3 lineRenderStartPosition;
+
         public GameObject cursor;
         private GameObject _cursor;
 
@@ -81,7 +83,7 @@ namespace BNG {
             // Update linerenderer
             if (lineRenderer) {
                 lineRenderer.useWorldSpace = false;
-                lineRenderer.SetPosition(0, Vector3.zero);
+                lineRenderer.SetPosition(0, lineRenderStartPosition);
                 lineRenderer.SetPosition(1, new Vector3(0, 0 , Vector3.Distance(transform.position, data.pointerCurrentRaycast.worldPosition) * LineDistanceModifier));
                 lineRenderer.enabled = data.pointerCurrentRaycast.distance > 0;
             }
