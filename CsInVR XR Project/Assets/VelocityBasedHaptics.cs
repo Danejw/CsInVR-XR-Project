@@ -90,8 +90,6 @@ namespace CSInVR
             {
                 InputBridge.Instance.GetLeftController().TryGetFeatureValue(CommonUsages.deviceVelocity, out velocity);
                 InputBridge.Instance.GetLeftController().SendHapticImpulse(0, amplitude + vibrationFloor, VibrateDuration);
-
-                InputBridge.Instance.GetLeftController().SendHapticImpulse(0, amplitude + vibrationFloor, VibrateDuration);
             }
 
             if (currentGrabber.HandSide == ControllerHand.Right)
