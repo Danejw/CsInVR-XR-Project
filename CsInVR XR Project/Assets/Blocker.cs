@@ -19,6 +19,7 @@ namespace CSInVR.Football
         public bool hasBlocked;
 
         public Vector3 startingPosition;
+        public float routePointHeight = -.002f;
 
         public FootballGame footballGame;
         public Transform divisionBlockPoint;
@@ -74,6 +75,8 @@ namespace CSInVR.Football
             Reciever.onCatch -= CatchEvent;
             Blocker.onBlock -= BlockEvent;
             HikeBall.onMissedCatch -= MissedCatchEvent;
+
+            DestroyRoute();
         }
 
         private void Update()
@@ -174,7 +177,7 @@ namespace CSInVR.Football
             for (int i = 0; i < numberOfDivisions; i++)
             {
                 // create division points
-                Transform point = Instantiate(divisionBlockPoint, new Vector3(startingPosition.x, 0.1f, startingPosition.z), Quaternion.identity);
+                Transform point = Instantiate(divisionBlockPoint, new Vector3(startingPosition.x, routePointHeight, startingPosition.z), Quaternion.identity);
                 // put division points into a list
                 divisionPoints.Add(point);
                 // place the division points onto the field
@@ -233,7 +236,7 @@ namespace CSInVR.Football
 
         private void Follow(Transform position, Vector3 distance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(position.position.x, 0, position.position.z) + distance, Time.deltaTime * blockerSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(position.position.x, 0f, position.position.z) + distance, Time.deltaTime * blockerSpeed);
 
             if (reciever) transform.LookAt(reciever.transform);
             else if (player) transform.LookAt(player.transform);

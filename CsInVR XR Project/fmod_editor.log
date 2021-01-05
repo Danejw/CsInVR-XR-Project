@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000021366150688 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002EEA1692BD8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,8 +15,730 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002EE94B516C8 : node = 000002EEB940B990
+[LOG] SystemI::createSound                     : add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE94B516C8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEB940BAA0
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE94B51BD8 : node = 000002EEB940B210
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Coliseum Anthem', format=5, channels=2, frequency=48000, lengthbytes=1962240, lengthpcm=6594333, pcmblocksize=0, loopstart=0, loopend=6527998, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.911987.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE94B516C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE94B51BD8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEB940B320
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Coliseum Anthem', format=5, channels=2, frequency=48000, lengthbytes=1962240, lengthpcm=6594333, pcmblocksize=0, loopstart=0, loopend=6527998, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.911987.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE94B51BD8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3D1463F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3D1463F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3D146FC8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3D146FC8
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FC425AEF28
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE90127E30
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE90127E00
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE90127F00
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE90127FC0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002EE4B8311F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ball_bounce', format=5, channels=1, frequency=48000, lengthbytes=4640, lengthpcm=26269, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999939.
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE94B51BD8)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE3636D648)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE3D146FC8)
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE94B516C8)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE3636E1A8)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE3D1463F8)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002EE3DF98308 : node = 000002ED44BC4E20
+[LOG] SystemI::createSound                     : add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF98308
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE3DF97738 : node = 000002ED44BC5320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC4F30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE3DF97A98 : node = 000002ED44BC5AA0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE3DF989C8 : node = 000002ED44BC69A0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 2
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE3DF98B78 : node = 000002ED44BC5FA0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 3
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE3DF9A678 : node = 000002ED44BC6360
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 4
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF98308
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF97738
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC5430
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF97738
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF97A98
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC5BB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF97A98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF989C8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC6AB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF989C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF98B78
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC60B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF98B78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF9A678
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002ED44BC6470
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF9A678
+[LOG] SoundI::release                          : football crowd normal (000002EEBA17E3F8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6CCBE148)
+[LOG] SoundI::release                          :     football crowd normal (000002EE438A2B18)
+[LOG] SoundI::release                          : football crowd normal (000002EEBA17E908)
+[LOG] SoundI::release                          :     football crowd normal (000002EE4ABFB328)
+[LOG] SoundI::release                          :     football crowd normal (000002EE438A31D8)
+[LOG] SoundI::release                          : football crowd normal (000002EEBA17E758)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6CCBDC68)
+[LOG] SoundI::release                          :     football crowd normal (000002EEBA20B3F8)
+[LOG] SoundI::release                          : football crowd normal (000002EEBA17EE18)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6CCBE2E8)
+[LOG] SoundI::release                          :     football crowd normal (000002EEBA20B5A8)
+[LOG] SoundI::release                          : football crowd normal (000002EE40677938)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6CCBE7C8)
+[LOG] SoundI::release                          :     football crowd normal (000002EEBA20B098)
+[LOG] SoundI::release                          : football crowd normal (000002EE45E2FE08)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6CCBDE08)
+[LOG] SoundI::release                          :     football crowd normal (000002EEBA20B248)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C464108
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C464108
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C466988
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C466988
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C463538
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C463538
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002EEB939C738 : node = 000002EE94A07F50
+[LOG] SystemI::createSound                     : add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939C738
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939CDF8 : node = 000002EE94A081D0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE94A08060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939CFA8 : node = 000002EE4A8975A0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939C3D8 : node = 000002EE4A8976E0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 2
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEBA20B098 : node = 000002EE4A897D20
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 3
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEBA20B3F8 : node = 000002EE04B104C0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 4
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EE438A2B18 : node = 000002EE04B10740
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 5
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939CC48 : node = 000002EEBA17E830
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 6
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEA110A2F8 : node = 000002EEBA17E970
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 7
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939C738
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939CDF8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE94A082E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939CDF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939CFA8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE4A8976B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939CFA8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939C3D8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE4A8977F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939C3D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEBA20B098
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE4A897E30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEBA20B098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEBA20B3F8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE04B105D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEBA20B3F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE438A2B18
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EE04B10850
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE438A2B18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939CC48
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E940
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd chants', format=5, channels=2, frequency=48000, lengthbytes=257056, lengthpcm=961920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713409.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939CC48
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110A2F8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17EA80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110A2F8
+[LOG] SoundI::release                          : football crowd chants (000002EEB939CFA8)
+[LOG] SoundI::release                          :     football crowd chants (000002ED90120888)
+[LOG] SoundI::release                          :     football crowd chants (000002EE3DF9C178)
+[LOG] SoundI::release                          : football crowd chants (000002EEB939CDF8)
+[LOG] SoundI::release                          :     football crowd chants (000002ED90120BC8)
+[LOG] SoundI::release                          :     football crowd chants (000002EE3DF96EC8)
+[LOG] SoundI::release                          : football crowd chants (000002EEB939C738)
+[LOG] SoundI::release                          :     football crowd chants (000002ED90122768)
+[LOG] SoundI::release                          :     football crowd chants (000002EE3DF9B248)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF98B78)
+[LOG] SoundI::release                          :     football crowd normal (000002EE94B51EE8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C463538)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF9A678)
+[LOG] SoundI::release                          :     football crowd normal (000002EE94E0A558)
+[LOG] SoundI::release                          :     football crowd normal (000002EE40663C78)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF97A98)
+[LOG] SoundI::release                          :     football crowd normal (000002EE94B52088)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C466988)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF989C8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE94B52228)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C4662C8)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF98308)
+[LOG] SoundI::release                          :     football crowd normal (000002EE455CB3D8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C464108)
+[LOG] SoundI::release                          : football crowd normal (000002EE3DF97738)
+[LOG] SoundI::release                          :     football crowd normal (000002EE455CBD98)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C465DB8)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF984B8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF984B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF98668
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF98668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE3DF99FB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE3DF99FB8
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002EEA110A4A8 : node = 000002EEBA17EAB0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110A4A8
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEA110A808 : node = 000002EEBA17E1F0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17EBC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEA110AB68 : node = 000002EEBA17E0B0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 1
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEA110AD18 : node = 000002EEBA17EBF0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 2
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939C8E8 : node = 000002EEBA17E5B0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 3
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939CDF8 : node = 000002EEBA17EE70
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 4
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEB939C588 : node = 000002EEBA17E330
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 5
+[LOG] SystemI::createSound                     :     filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEBA20B248 : node = 000002EEBA17ED30
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 6
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110A4A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110A808
+[LOG] SystemI::createSound                     : filename = B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000002EEA110A9B8 : node = 000002EEBA17E470
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSound                     :     add node to async list : head = 000002EE4ACE3578.  list count = 6
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E300
+[LOG] SoundI::release                          :     football touchdown screams (000002EEA110A4A8)
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :         exinfo->suggestedsoundtype = 5
+[LOG] SoundI::release                          :         football touchdown screams (000002EE455CB3D8)
+[LOG] SystemI::createSoundInternal             :         exinfo->initialseekpostype = 1
+[LOG] SoundI::release                          :         football touchdown screams (000002EE6C465DB8)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110A808
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110AB68
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E1C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110AB68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110AD18
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17ED00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110AD18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939C8E8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E6C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939C8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939CDF8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17EF80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939CDF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEB939C588
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E440
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEB939C588
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEBA20B248
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17EE40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football touchdown screams', format=5, channels=2, frequency=48000, lengthbytes=592096, lengthpcm=2497536, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.711487.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEBA20B248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EEA110A9B8
+[LOG] SystemI::createSoundInternal             :     Create name='B:\FMOD Studio\CSInVr XR Project\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4594912
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 19584
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002EEBA17E580
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='football crowd normal', format=5, channels=2, frequency=48000, lengthbytes=558784, lengthpcm=2263680, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.703339.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EEA110A9B8
+[LOG] SoundI::release                          : football touchdown screams (000002EEA110AB68)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE455CB3D8)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE6C4662C8)
+[LOG] SoundI::release                          : football touchdown screams (000002EEA110A808)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE455CBD98)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE6C465DB8)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C466988
+[LOG] SoundI::release                          :     football crowd chants (000002EEB939CC48)
+[LOG] SoundI::release                          :         football crowd chants (000002ED90120A28)
+[LOG] SoundI::release                          :         football crowd chants (000002EE3DF99FB8)
+[LOG] SoundI::release                          :     football crowd normal (000002EEA110A2F8)
+[LOG] SoundI::release                          :         football crowd normal (000002ED90123E28)
+[LOG] SoundI::release                          :         football crowd normal (000002EE3DF9A168)
+[LOG] SoundI::release                          :     football crowd chants (000002EEBA20B3F8)
+[LOG] SoundI::release                          :         football crowd chants (000002ED901218C8)
+[LOG] SoundI::release                          :         football crowd chants (000002EE3DF98668)
+[LOG] SoundI::release                          :     football crowd normal (000002EE438A2B18)
+[LOG] SoundI::release                          :         football crowd normal (000002ED90121C08)
+[LOG] SoundI::release                          :         football crowd normal (000002EE3DF98818)
+[LOG] SoundI::release                          :     football crowd chants (000002EEB939C3D8)
+[LOG] SoundI::release                          :         football crowd chants (000002ED90121A68)
+[LOG] SoundI::release                          :         football crowd chants (000002EE3DF984B8)
+[LOG] SoundI::release                          :     football crowd normal (000002EEBA20B098)
+[LOG] SoundI::release                          :         football crowd normal (000002ED90122F88)
+[LOG] SoundI::release                          :         football crowd normal (000002EE3DF9BAB8)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C466988
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C466B38
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C466B38
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002EE6C4631D8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002EE6C4631D8
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[WRN] FMOD_OS_Net_Listen                       : Cannot listen for connections, port 9264 is currently in use.
+[LOG] SoundI::release                          : football touchdown screams (000002EEA110AD18)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE9B9F88F8)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE6C466988)
+[LOG] SoundI::release                          : football crowd normal (000002EEB939C8E8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE9B9F8C38)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C463DA8)
+[LOG] SoundI::release                          : football touchdown screams (000002EEB939CDF8)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE9B9F8F78)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE6C466B38)
+[LOG] SoundI::release                          : football crowd normal (000002EEB939C588)
+[LOG] SoundI::release                          :     football crowd normal (000002EE9B9F9118)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C466CE8)
+[LOG] SoundI::release                          : football touchdown screams (000002EEBA20B248)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE9B9F92B8)
+[LOG] SoundI::release                          :     football touchdown screams (000002EE6C4631D8)
+[LOG] SoundI::release                          : football crowd normal (000002EEA110A9B8)
+[LOG] SoundI::release                          :     football crowd normal (000002EE9B9F8A98)
+[LOG] SoundI::release                          :     football crowd normal (000002EE6C463F58)
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE4B108448)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE6CCBE628)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EEBA20BC68)
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE40677788)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE6CCBE488)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EEBA20BE18)
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE4B107F38)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE43172A48)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE4AC89EF8)
+[LOG] SoundI::release                          : Coliseum Anthem (000002EE406770C8)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EE6CCBDAC8)
+[LOG] SoundI::release                          :     Coliseum Anthem (000002EEBA20BAB8)
+[LOG] SoundI::release                          :  (000002EE3D9C7148)
+[LOG] SoundI::release                          :     ball_bounce (000002EEB9D24208)
+[LOG] SoundI::release                          :  (000002EE0E693498)
+[LOG] SoundI::release                          :     negative (000002ED90121588)
+[LOG] SoundI::release                          :  (000002EE0E695B68)
+[LOG] SoundI::release                          :     game_tone_bright_sparkle_award_star (000002ED90121DA8)
+[LOG] SoundI::release                          :  (000002EE0E692BF8)
+[LOG] SoundI::release                          :     game_tone_bright_sparkle_award_star2 (000002ED90122AA8)
+[LOG] SoundI::release                          :  (000002EE0E6921E8)
+[LOG] SoundI::release                          :     game_tone_bright_sparkle_award_star3 (000002ED901225C8)
+[LOG] SoundI::release                          :  (000002EE0E6959F8)
+[LOG] SoundI::release                          :     Key Catch (000002ED901220E8)
+[LOG] SoundI::release                          :  (000002EE0E694018)
+[LOG] SoundI::release                          :     Announcer Saying Epic (000002ED90121F48)
+[LOG] SoundI::release                          :  (000002EE0E693EA8)
+[LOG] SoundI::release                          :     referee-whistle-01 (000002ED90123948)
+[LOG] SoundI::release                          :  (000002EE0E6966E8)
+[LOG] SoundI::release                          :     Announcer Let The Games Begin 2 (000002ED90123C88)
+[LOG] SoundI::release                          :  (000002EE0E6917D8)
+[LOG] SoundI::release                          :     Announcer Try Again (000002ED90124308)
+[LOG] SoundI::release                          :  (000002EE0E693608)
+[LOG] SoundI::release                          :     Announcer And Here We Go 2 (000002ED90120548)
+[LOG] SoundI::release                          :  (000002EE0E695CD8)
+[LOG] SoundI::release                          :     household_pillow_bambo_throw (000002ED901237A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
@@ -28,3 +750,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

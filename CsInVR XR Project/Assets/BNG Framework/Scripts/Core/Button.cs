@@ -148,7 +148,7 @@ namespace BNG {
             }
         }
 
-        void OnTriggerEnter(Collider other) {
+        public virtual void OnTriggerEnter(Collider other) {
             Grabber grab = other.GetComponent<Grabber>();
             if (grab != null) {
                 if (grabbers == null) {
@@ -161,7 +161,7 @@ namespace BNG {
             }
         }
 
-        void OnTriggerExit(Collider other) {
+        public virtual void OnTriggerExit(Collider other) {
             Grabber grab = other.GetComponent<Grabber>();
             if (grab != null) {
                 if (grabbers.Contains(grab)) {

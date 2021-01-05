@@ -9,6 +9,8 @@ namespace CSInVR.Football
     {
         public bool debug;
 
+        public string sceneToLoadOnGameOver;
+
         public int currentDown = 1;
         public int maxDown = 4;
 
@@ -115,7 +117,7 @@ namespace CSInVR.Football
                         ToggleHideHikeMarker(true);
             }
             else
-                GameOver();
+                if (!isGameOver) GameOver();
 
 
         }
@@ -180,7 +182,7 @@ namespace CSInVR.Football
 
         private void GameOver()
         {
-            StartCoroutine(EndGame());
+            //StartCoroutine(EndGame());
 
             if (debug) Debug.Log("The Game is Over!");
 
@@ -194,8 +196,9 @@ namespace CSInVR.Football
 
         IEnumerator EndGame()
         {
-            yield return new WaitForSeconds(10);
-            SceneManager.LoadScene(0);
+            // Load Scene
+            yield return new WaitForSeconds(3);
+            if (sceneToLoadOnGameOver != null) TransitionManager.Instance?.SceneLoadUnload(sceneToLoadOnGameOver);
         }
 
         public void NextPlay()

@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637441513457823619
+  lastModified: 637454374213896091
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -270,7 +270,7 @@ MonoBehaviour:
   - {fileID: -4522231344131449568}
   StringsBanks:
   - {fileID: 1084308680359849963}
-  stringsBankWriteTime: 637441513457868615
+  stringsBankWriteTime: 637454374213941388
   cacheVersion: 5
 --- !u!114 &206720452808306048
 MonoBehaviour:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637441513457868615
+  lastModified: 637454374213941388
   LoadResult: 0
   FileSizes:
   - Name: Desktop

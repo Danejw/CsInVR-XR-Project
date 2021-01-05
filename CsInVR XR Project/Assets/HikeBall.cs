@@ -54,7 +54,7 @@ namespace CSInVR.Football
 
             if (GetBallIsActive()) SetBallIsActive(false);
 
-            startingPosition = footballGame.startingPosition;
+            //startingPosition = footballGame.startingPosition;
         }
 
         private void OnDisable()

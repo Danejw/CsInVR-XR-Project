@@ -5123,6 +5123,7 @@ GameObject:
   - component: {fileID: 1608976235471119469}
   - component: {fileID: 2068271734}
   - component: {fileID: 2068271735}
+  - component: {fileID: 5018210665650363107}
   m_Layer: 0
   m_Name: HikeBall_Fmod
   m_TagString: Ball
@@ -5138,8 +5139,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6988663892353277780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000063329935, y: -0.6501999, z: 4.992}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 6988663891890516319}
   - {fileID: 2381490669653152310}
@@ -5246,12 +5247,12 @@ MonoBehaviour:
   Grabtype: 2
   GrabPhysics: 3
   GrabMechanic: 0
-  GrabSpeed: 30
+  GrabSpeed: 50
   RemoteGrabbable: 1
   RemoteGrabDistance: 5
   ThrowForceMultiplier: 2
   ThrowForceMultiplierAngular: 1.5
-  BreakDistance: 0.5
+  BreakDistance: 0
   HideHandGraphics: 0
   ParentToHands: 1
   ParentHandModel: 0
@@ -5477,7 +5478,21 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
-  debug: 1
+  debug: 0
+--- !u!114 &5018210665650363107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988663892353277780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804203cdc71657347bc071dfeba41047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalPositionOffset: {x: 0, y: 0, z: 0}
+  LocalRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &7199870401251659106
 GameObject:
   m_ObjectHideFlags: 0

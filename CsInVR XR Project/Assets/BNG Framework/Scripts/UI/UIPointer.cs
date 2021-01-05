@@ -35,9 +35,9 @@ namespace BNG {
         [Tooltip("LineRenderer to use when showing a valid UI Canvas. Leave null to attempt a GetComponent<> on this object.")]
         public LineRenderer lineRenderer;
 
-        void Awake() {
+        void Start() {
 
-            if(cursor) {
+            if(cursor && !_cursor) {
                 _cursor = GameObject.Instantiate(cursor);
             }
 
@@ -60,10 +60,10 @@ namespace BNG {
                 uiSystem.LeftPointerTransform = this.transform;
             }
             else if (AutoUpdateUITransforms && ControllerSide == ControllerHand.Right) {
-                uiSystem.RightPointerTransform = this.transform;
+                if (uiSystem) uiSystem.RightPointerTransform = this.transform;
             }
 
-            uiSystem.UpdateControllerHand(ControllerSide);
+            if (uiSystem) uiSystem.UpdateControllerHand(ControllerSide);
         }
 
         void Update() {

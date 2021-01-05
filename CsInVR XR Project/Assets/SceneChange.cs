@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SceneChange : MonoBehaviour
+
+namespace CSInVR
 {
-    public void GotoQuarterBackChallenge()
+    public class SceneChange : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
+        public string sceneName;
+
+        public void GotoScene()
+        {
+            TransitionManager.Instance?.SceneLoadUnload(sceneName);
+
+            Debug.Log("Scene changing");
+        }
     }
 }

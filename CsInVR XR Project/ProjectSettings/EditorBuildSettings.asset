@@ -6,11 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Football Home Scene.unity
-    guid: b3745da52856a604eaee8b8150b859c2
+    path: Assets/Scenes/Persistent Scene.unity
+    guid: cadd181291ad68d4ab6b55b5ea7b8a5a
   - enabled: 1
     path: Assets/Scenes/Football Quarterback Touchdown Challenge.unity
     guid: d244277b149d26349a88e90c81fb95a9
+  - enabled: 1
+    path: Assets/Scenes/Football Home Scene.unity
+    guid: b3745da52856a604eaee8b8150b859c2
+  - enabled: 1
+    path: Assets/Scenes/Load.unity
+    guid: f504f6169b1fdf84ab83acb36acef888
+  - enabled: 1
+    path: Assets/Scenes/Football Quarterback Precision Challenge.unity
+    guid: 044180d257cb9ea4891a4d4805f5249b
+  - enabled: 1
+    path: Assets/Scenes/Football Quarterback Challenge 2.unity
+    guid: ee2b91674d857cd49ab1f49d2e5f9cde
+  - enabled: 1
+    path: Assets/Scenes/CSInVR Assignment 7 Grabbable Gun.unity
+    guid: 663fc9d4660d00648973b958e99b7df5
+  - enabled: 1
+    path: Assets/Scenes/Football Tutorial Scene.unity
+    guid: a4b7fb1a559bf5546b88e97e48b5d53a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b240aeee0bc42ad4d86daded1f49d6c0,
       type: 2}
