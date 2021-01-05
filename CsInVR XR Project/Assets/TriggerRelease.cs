@@ -11,7 +11,7 @@ namespace CSInVR
     {
         public float gripRelease = .5f;
 
-        Grabber grabber;
+        protected Grabber grabber;
         ControllerHand hand;
         
 
@@ -21,7 +21,7 @@ namespace CSInVR
             hand = grabber.HandSide;
         }
 
-        private void FixedUpdate()
+        public virtual void Update()
         {
             if (grabber.HoldingItem)
             {

@@ -19,6 +19,7 @@ namespace CSInVR.Football
         public bool hasBlocked;
 
         public Vector3 startingPosition;
+        public float routePointHeight = -.002f;
 
         public FootballGame footballGame;
         public Transform divisionBlockPoint;
@@ -34,11 +35,16 @@ namespace CSInVR.Football
         [SerializeField] private float waypointRadius = 0.5f;
         private int count;
         [SerializeField] private bool isRunning = false;
+        [SerializeField] private bool isAttacking = false;
 
         private Reciever reciever;
         [SerializeField] private Vector3 distanceBetweenReciever = new Vector3(0, 0, -1);
 
+        public Transform ball;
+        [SerializeField] private Vector3 distanceBetweenBall = new Vector3(0, 0, -0.2f);
+
         public Transform player;
+        [SerializeField] private Vector3 distanceBetweenPlayer = new Vector3(0, 0, -0.2f);
 
         public bool regenerateRoute;
 
@@ -55,6 +61,7 @@ namespace CSInVR.Football
             HikeBall.onHike += Run;
             Reciever.onCatch += CatchEvent;
             Blocker.onBlock += BlockEvent;
+            HikeBall.onMissedCatch += MissedCatchEvent;
 
             hasBlocked = false;
             isRunning = false;
@@ -66,7 +73,10 @@ namespace CSInVR.Football
         {
             HikeBall.onHike -= Run;
             Reciever.onCatch -= CatchEvent;
-            Blocker.onBlock += BlockEvent;
+            Blocker.onBlock -= BlockEvent;
+            HikeBall.onMissedCatch -= MissedCatchEvent;
+
+            DestroyRoute();
         }
 
         private void Update()
@@ -79,13 +89,11 @@ namespace CSInVR.Football
 
             if (isRunning)
             {
-                if (reciever)
-                    Follow(reciever.transform);
-                else
-                    MoveAlongRoute();
+                // flip if, else statements around to priority defending over attacking and vice versa
+                if (ball && isAttacking) Follow(ball.transform, distanceBetweenBall);
+                else if (reciever) Follow(reciever.transform, distanceBetweenReciever);
+                else MoveAlongRoute();
             }
-
-
         }
 
 
@@ -143,9 +151,9 @@ namespace CSInVR.Football
                 reciever = other.GetComponent<Reciever>();
             }
 
-            if (other.gameObject.tag == "Pocket")
+            if (other.gameObject.tag == "Pocket" && isRunning)
             {
-                player = other.GetComponent<Transform>();
+                isAttacking = true;
             }
         }
 
@@ -162,12 +170,14 @@ namespace CSInVR.Football
         // Reviever's Route
         private void CreateRoute()
         {
+            isAttacking = false;
+
             float divisionIterator = (footballGame.GetDistanceTillFirstdown() - extraDistanceAmount) / numberOfDivisions;
 
             for (int i = 0; i < numberOfDivisions; i++)
             {
                 // create division points
-                Transform point = Instantiate(divisionBlockPoint, new Vector3(startingPosition.x, 0.1f, startingPosition.z), Quaternion.identity);
+                Transform point = Instantiate(divisionBlockPoint, new Vector3(startingPosition.x, routePointHeight, startingPosition.z), Quaternion.identity);
                 // put division points into a list
                 divisionPoints.Add(point);
                 // place the division points onto the field
@@ -179,17 +189,21 @@ namespace CSInVR.Football
         }
 
         private void MoveAlongRoute()
-        {       
+        {
             if (Vector3.Distance(divisionPoints[count].position, transform.position) < waypointRadius)
             {
                 count++;
 
                 if (count >= divisionPoints.Count)
-                    Follow(player);
+                    Follow(ball, distanceBetweenBall);
             }
             else
+            {
                 transform.position = Vector3.MoveTowards(transform.position, divisionPoints[count].position, Time.deltaTime * blockerSpeed);
-           
+                transform.LookAt(divisionPoints[count].position);
+            }
+
+
             if (debug) Debug.Log("Moving along " + this.name + "'s route");
         }
 
@@ -197,6 +211,8 @@ namespace CSInVR.Football
         {
             isRunning = false;
             count = 0;
+
+            reciever = null;
 
             if (divisionPoints != null)
             {
@@ -218,11 +234,14 @@ namespace CSInVR.Football
             if (debug) Debug.Log("Regenerating " + this.name + "'s route");
         }
 
-        private void Follow(Transform position)
+        private void Follow(Transform position, Vector3 distance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, position.position + distanceBetweenReciever, Time.deltaTime * blockerSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(position.position.x, 0f, position.position.z) + distance, Time.deltaTime * blockerSpeed);
 
-            if (debug) Debug.Log("Following " + reciever.name);
+            if (reciever) transform.LookAt(reciever.transform);
+            else if (player) transform.LookAt(player.transform);
+
+            if (debug) Debug.Log("Following " + position.name);
         }
 
         // events
@@ -232,6 +251,11 @@ namespace CSInVR.Football
         }
 
         private void BlockEvent(GameObject blocker)
+        {
+            isRunning = false;
+        }
+
+        private void MissedCatchEvent()
         {
             isRunning = false;
         }

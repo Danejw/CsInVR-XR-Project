@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using BNG;
 
-namespace BNG {
-    public class ScreenFader : MonoBehaviour {
+namespace CSInVR
+{
+    public class ScreenFader :  Singleton<ScreenFader> {
 
         [Tooltip("Should the screen fade in when a new level is loaded")]
         public bool FadeOnSceneLoaded = true;
@@ -23,6 +25,10 @@ namespace BNG {
         CanvasGroup canvasGroup;
         Image fadeImage;
         IEnumerator fadeRoutine;
+
+        // tests
+        public bool doFadeIn;
+        public bool doFadeOut;
 
         protected virtual void initialize() {
             // Create a Canvas that will be placed directly over the camera
@@ -157,6 +163,23 @@ namespace BNG {
             // Disable Canvas if we're done
             if (alphaValue == 0 && canvasGroup.gameObject.activeSelf) {
                 canvasGroup.gameObject.SetActive(false);
+            }
+        }
+
+
+        // tests
+        private void Update()
+        {
+            if (doFadeIn)
+            {
+                DoFadeIn();
+                doFadeIn = false;
+            }
+
+            if (doFadeOut)
+            {
+                DoFadeOut();
+                doFadeOut = false;
             }
         }
     }

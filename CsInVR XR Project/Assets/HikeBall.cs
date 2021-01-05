@@ -11,6 +11,11 @@ namespace CSInVR.Football
     {
         public bool debug;
 
+        [SerializeField] private bool spiral = true;
+        public float minSpiralVelocity = 5;
+        [SerializeField] private float spiralAngleAmt = 180;
+        [SerializeField] private float spiralSpinSpeed = 10;
+
         private bool isHiked;
         public bool hasHiked;
 
@@ -23,6 +28,7 @@ namespace CSInVR.Football
         public static event OnMissedCatch onMissedCatch;
 
         private Grabbable grabbable;
+        private Rigidbody rig;
 
         private bool isCaught;
 
@@ -36,15 +42,19 @@ namespace CSInVR.Football
         {
             grabbable = GetComponent<Grabbable>();
             if (footballGame) footballGame = footballGame.GetComponent<FootballGame>(); else Debug.Log("The FootballGame is Not assigned");
+
+            if (!rig) rig = GetComponent<Rigidbody>();
         }
 
         void OnEnable()
         {
             grabbable = GetComponent<Grabbable>();
 
-            if (!GetBallIsActive()) SetBallIsActive(true);
+            if (!rig) rig = GetComponent<Rigidbody>();
 
-            startingPosition = footballGame.startingPosition;
+            if (GetBallIsActive()) SetBallIsActive(false);
+
+            //startingPosition = footballGame.startingPosition;
         }
 
         private void OnDisable()
@@ -75,6 +85,8 @@ namespace CSInVR.Football
                         hasHiked = true;
                         isGrabbed = true;
 
+                        if (!GetBallIsActive()) SetBallIsActive(true);
+
                         if (debug) Debug.Log("The Ball is being held");
                     }
                 }
@@ -85,7 +97,11 @@ namespace CSInVR.Football
                 }
             }
 
+            // if ball is moving faster than a minimal velocity
+            if (spiral && rig.velocity.magnitude > minSpiralVelocity)
+                Spiral();
         }
+        
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -112,10 +128,22 @@ namespace CSInVR.Football
         public void ResetBall(Vector3 position)
         {
             transform.position = position;
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-            GetComponent<Rigidbody>().isKinematic = false;
+            rig.velocity = new Vector3(0, 0, 0);
+            rig.isKinematic = false;
             transform.parent = null;
-            SetBallIsActive(true);
+            SetBallIsActive(false);
+        }
+
+        private void Spiral()
+        {
+            if (GetBallIsActive())
+            {
+                if (debug) Debug.Log("The ball is spiraling at " + rig.velocity.magnitude);
+
+                // face in the direction of velocity
+                transform.LookAt(transform.position + rig.velocity);
+                // rotate object
+            }
         }
     }
 

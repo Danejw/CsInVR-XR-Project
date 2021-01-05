@@ -39,7 +39,6 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch += CrowdCheers;
             Goal.onGoal += CrowdTouchdown;
             HikeBall.onMissedCatch += CrowdMissedOpportunity;
-            //FootballGame.onReadyToStart
             Blocker.onBlock += CrowdBlockedPass;
         }
 

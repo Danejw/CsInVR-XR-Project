@@ -16,6 +16,8 @@ namespace BNG {
         [Tooltip("If true this object will update the VRUISystem's Left or Right Transform property")]
         public bool AutoUpdateUITransforms = true;
 
+        public Vector3 lineRenderStartPosition;
+
         public GameObject cursor;
         private GameObject _cursor;
 
@@ -33,9 +35,9 @@ namespace BNG {
         [Tooltip("LineRenderer to use when showing a valid UI Canvas. Leave null to attempt a GetComponent<> on this object.")]
         public LineRenderer lineRenderer;
 
-        void Awake() {
+        void Start() {
 
-            if(cursor) {
+            if(cursor && !_cursor) {
                 _cursor = GameObject.Instantiate(cursor);
             }
 
@@ -58,10 +60,10 @@ namespace BNG {
                 uiSystem.LeftPointerTransform = this.transform;
             }
             else if (AutoUpdateUITransforms && ControllerSide == ControllerHand.Right) {
-                uiSystem.RightPointerTransform = this.transform;
+                if (uiSystem) uiSystem.RightPointerTransform = this.transform;
             }
 
-            uiSystem.UpdateControllerHand(ControllerSide);
+            if (uiSystem) uiSystem.UpdateControllerHand(ControllerSide);
         }
 
         void Update() {
@@ -81,7 +83,7 @@ namespace BNG {
             // Update linerenderer
             if (lineRenderer) {
                 lineRenderer.useWorldSpace = false;
-                lineRenderer.SetPosition(0, Vector3.zero);
+                lineRenderer.SetPosition(0, lineRenderStartPosition);
                 lineRenderer.SetPosition(1, new Vector3(0, 0 , Vector3.Distance(transform.position, data.pointerCurrentRaycast.worldPosition) * LineDistanceModifier));
                 lineRenderer.enabled = data.pointerCurrentRaycast.distance > 0;
             }
