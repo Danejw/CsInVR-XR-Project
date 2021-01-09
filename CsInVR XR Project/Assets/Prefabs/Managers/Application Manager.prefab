@@ -4943,6 +4943,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Directional Light
       objectReference: {fileID: 0}
+    - target: {fileID: 5888081027427381201, guid: 6a89309bd6d15de46ad73c6aef9a37d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5888081027427381231, guid: 6a89309bd6d15de46ad73c6aef9a37d7,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -5370,7 +5370,6 @@ MonoBehaviour:
   spiralSpinSpeed: 10
   hasHiked: 0
   footballGame: {fileID: 0}
-  isGrabbed: 0
 --- !u!114 &2068271734
 MonoBehaviour:
   m_ObjectHideFlags: 0

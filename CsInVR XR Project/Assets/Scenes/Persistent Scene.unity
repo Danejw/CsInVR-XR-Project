@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1365254878, guid: 89e30e8fe3bca634b9754fae803241c7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1365254880, guid: 89e30e8fe3bca634b9754fae803241c7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.1594237
