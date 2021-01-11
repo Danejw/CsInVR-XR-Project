@@ -1,0 +1,88 @@
+
+newmtl StandardFF0D0D
+Kd  01 0.050980396 0.050980396
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl Standard212121
+Kd  0.12941176 0.12941176 0.12941176
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl Standard474747
+Kd  0.2784314 0.2784314 0.2784314
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl Standard7F7F7F
+Kd  0.4980392 0.4980392 0.4980392
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl StandardDFDFDF
+Kd  0.87450992 0.87450992 0.87450992
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl Standard8A3300
+Kd  0.5411765 0.2 00
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl StandardFFFFFF
+Kd  01 01 01
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
+
+newmtl Standard151615
+Kd  0.08235294 0.0862745 0.08235294
+Ks  00 00 00
+Ka  00 00 00
+d  01
+Ns  00
+illum 2
+
+
+
