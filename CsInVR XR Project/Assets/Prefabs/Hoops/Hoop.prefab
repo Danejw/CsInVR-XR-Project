@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 528520849862500397}
   - component: {fileID: 6648296409878986364}
   - component: {fileID: 6648296409878986367}
+  - component: {fileID: 6504010533641227516}
   m_Layer: 0
   m_Name: TargetGoal
   m_TagString: Untagged
@@ -240,8 +241,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfeaa9ce2300c04ab58e11394b16d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   particle: {fileID: 8869541086880430549}
+--- !u!164 &6504010533641227516
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779994600297450133}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -698
+  m_DecayTime: 7.24
+  m_DecayHFRatio: 0.33
+  m_ReflectionsLevel: -1166
+  m_ReverbLevel: 16
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 10
 --- !u!1 &6648296409162154902
 GameObject:
   m_ObjectHideFlags: 0
