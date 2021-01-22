@@ -397,6 +397,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 476957125105907411, guid: 89e30e8fe3bca634b9754fae803241c7,
+        type: 3}
+      propertyPath: openingSceneName
+      value: Football Tutorial Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 476957125105907420, guid: 89e30e8fe3bca634b9754fae803241c7,
         type: 3}
       propertyPath: m_Name
@@ -830,6 +835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Persistent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013293220235767303, guid: 725a8838070c1a94b870e4a77dca4b75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2013293220235767304, guid: 725a8838070c1a94b870e4a77dca4b75,
         type: 3}
