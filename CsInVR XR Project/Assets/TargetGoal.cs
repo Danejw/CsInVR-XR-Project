@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace CSInVR
+namespace CSInVR.Tutorial
 {
     [RequireComponent(typeof(AudioSource))]
     [RequireComponent(typeof(Collider))]
@@ -15,6 +15,11 @@ namespace CSInVR
         // Play Goal effects if trigger is hit
         AudioSource sound;
         public ParticleSystem particle;
+
+        public delegate void OnTargetHit();
+        public static event OnTargetHit onTargetHit;
+
+        private bool targethit = false;
 
         private void Awake()
         {
@@ -33,6 +38,13 @@ namespace CSInVR
                 // Play Sound
                 if (!sound.isPlaying)
                     sound.Play();
+
+                // send on target hit event once
+                if (!targethit)
+                {
+                    onTargetHit.Invoke();
+                    targethit = true;
+                }
 
                 if (debug) Debug.Log("TargetGoal Hit!");
             }
