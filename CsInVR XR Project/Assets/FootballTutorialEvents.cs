@@ -12,9 +12,6 @@ namespace CSInVR.Tutorial
         public delegate void OnTutorialStart();
         public static event OnTutorialStart onTutorialStart;
 
-        public delegate void OnTutorialEnd();
-        public static event OnTutorialEnd onTutorialEnd;
-
         public UnityEvent TutorialStart;
         public UnityEvent TutorialEnd;
         public UnityEvent TutorialOnHike;
@@ -33,6 +30,7 @@ namespace CSInVR.Tutorial
             TutorialHikeBall.onThrownBall += OnThrownBall;
             TutorialHikeBall.onSpiral += OnSpiral;
             TargetGoal.onTargetHit += OnHitTarget;
+            SimpleTutorialManager.onTutorialEnd += OnEnd;
 
             OnStart();
         }
@@ -45,6 +43,7 @@ namespace CSInVR.Tutorial
             TutorialHikeBall.onThrownBall -= OnThrownBall;
             TutorialHikeBall.onSpiral -= OnSpiral;
             TargetGoal.onTargetHit -= OnHitTarget;
+            SimpleTutorialManager.onTutorialEnd -= OnEnd;
         }
 
         private void OnStart()
@@ -58,7 +57,6 @@ namespace CSInVR.Tutorial
         private void OnEnd()
         {
             TutorialEnd?.Invoke();
-            onTutorialEnd?.Invoke();
 
             if (debug) Debug.Log("Tutorial TutorialEnd Event");
         }

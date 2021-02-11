@@ -22,17 +22,32 @@ namespace CSInVR.Football.Fmod
         {
             if (eventPath != null)
             {
-                eventInstance = RuntimeManager.CreateInstance(eventPath);
-                RuntimeManager.AttachInstanceToGameObject(eventInstance, transform, GetComponent<Rigidbody>());
+                eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                RuntimeManager.StudioSystem.setParameterByName("MusicScenes", 0);
                 eventInstance.start();
             }
             else
                 Debug.LogError("The event path is Not assigned");
+
+            Tutorial.FootballTutorialEvents.onTutorialStart += PlayTutorialMusicScene;
         }
 
         private void OnDisable()
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            Tutorial.FootballTutorialEvents.onTutorialStart -= PlayTutorialMusicScene;
+
+        }
+
+
+        public void PlayTutorialMusicScene()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            RuntimeManager.StudioSystem.setParameterByName("MusicScenes", 1);
+            eventInstance.start();
+
+            if (debug) Debug.Log("New Music Scene is playing");
         }
     }
 }

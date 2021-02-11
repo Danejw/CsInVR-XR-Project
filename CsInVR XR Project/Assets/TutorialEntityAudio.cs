@@ -51,6 +51,16 @@ namespace CSInVR.Tutorial
             if (debug) Debug.Log("Playing Start audio");
         }
 
+        public void PlayEndAudio()
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            eventInstance.setParameterByName("Tutorial", 8);
+            RuntimeManager.AttachInstanceToGameObject(eventInstance, transform, GetComponent<Rigidbody>());
+            eventInstance.start();
+
+            if (debug) Debug.Log("Playing End audio");
+        }
+
         public void PlayGrabAudio()
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
