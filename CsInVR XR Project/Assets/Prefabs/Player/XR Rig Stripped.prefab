@@ -31655,7 +31655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7487670740684533309
 Transform:
   m_ObjectHideFlags: 0
@@ -46274,7 +46274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &758789512869063562
 Transform:
   m_ObjectHideFlags: 0
@@ -62197,15 +62197,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: GrabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: GrabSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: RemoteGrabbable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: RemoteGrabDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: BreakDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: ParentToHands
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: CustomHandPose
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630064, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: SecondaryGrabBehavior
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 808985928560630070, guid: 84e7b7e34787c9a428f6b561fb697afe,
         type: 3}
       propertyPath: ScaleItem
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 808985928560630070, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: HeldItem
+      value: 
+      objectReference: {fileID: 6988663892353277777, guid: 40ff52434143e8f4d850cdd4d74d152d,
+        type: 3}
+    - target: {fileID: 808985928560630070, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: DuplicateItemOnGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4725554118829709201, guid: 84e7b7e34787c9a428f6b561fb697afe,
         type: 3}
       propertyPath: m_Name
       value: FootballGrabBag
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725554118829709201, guid: 84e7b7e34787c9a428f6b561fb697afe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6260014468778150282, guid: 84e7b7e34787c9a428f6b561fb697afe,
         type: 3}

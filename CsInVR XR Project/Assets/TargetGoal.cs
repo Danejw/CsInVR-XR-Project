@@ -27,7 +27,7 @@ namespace CSInVR.Tutorial
         public delegate void OnTargetHit();
         public static event OnTargetHit onTargetHit;
 
-        [SerializeField] private bool targethit = false;
+        [HideInInspector] public bool targethit = false;
 
 
         private void Awake()

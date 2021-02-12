@@ -146,7 +146,7 @@ namespace CSInVR
             //UIManager.Instance?.DoInnerLoopOut();
         }
 
-        private IEnumerator DelayLoadScene(float seconds, string sceneName)
+        public IEnumerator DelayLoadScene(float seconds, string sceneName)
         {
             yield return new WaitForSeconds(seconds);
             SceneLoadUnload(sceneName);

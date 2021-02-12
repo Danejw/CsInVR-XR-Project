@@ -46,7 +46,7 @@ namespace CSInVR.Tutorial
             SimpleTutorialManager.onTutorialEnd -= OnEnd;
         }
 
-        private void OnStart()
+        public void OnStart()
         {
             TutorialStart?.Invoke();
             onTutorialStart?.Invoke();

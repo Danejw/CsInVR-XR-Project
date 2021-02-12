@@ -66,5 +66,17 @@ namespace CSInVR.Tutorial
             if (debug) Debug.Log("Targets hit: " + targetsHit);
         }
 
+
+        public void ResetTutorial()
+        {
+            foreach (TargetGoal target in targetsInScene)
+            {
+                target.targethit = false;
+            }
+
+            isTutorialComplete = false;
+            targetsHit = 0;
+        }
+
     }
 }
