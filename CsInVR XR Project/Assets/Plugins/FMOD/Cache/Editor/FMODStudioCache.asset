@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9062872959437927733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Entity/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-8048106308089409784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Entity/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-7785269818478653866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +161,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5070320054904439212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,11 +241,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637485467565242473
+  lastModified: 637488259849869440
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 8926112
+    Value: 6523200
   Exists: 1
 --- !u!114 &-4271453525889742875
 MonoBehaviour:
@@ -230,6 +270,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 32000
+--- !u!114 &-2455879299503146467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EntityTwo/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2397441237727918535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +352,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1619394039675110851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +491,7 @@ MonoBehaviour:
   - {fileID: -4522231344131449568}
   StringsBanks:
   - {fileID: 1084308680359849963}
-  stringsBankWriteTime: 637485467565292464
+  stringsBankWriteTime: 637488259849924585
   cacheVersion: 5
 --- !u!114 &135718541523265338
 MonoBehaviour:
@@ -475,7 +535,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 137381
 --- !u!114 &1084308680359849963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,11 +550,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: B:/FMOD Studio/CSInVr XR Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637485467565292464
+  lastModified: 637488259849924585
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1278
+  Exists: 1
+--- !u!114 &1125330858929529965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Entity/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &2685217148431470256
 MonoBehaviour:
@@ -539,6 +619,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &3397011357532521512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EntityTwo/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5250078959729809077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +659,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -5095869936463435065}
+  - {fileID: 1125330858929529965}
   MinDistance: 1
   MaxDistance: 20
   Length: 23000
@@ -579,11 +679,11 @@ MonoBehaviour:
   guid: 562c9cc341c7134abad4bf3b75b1c9df
   Banks:
   - {fileID: -4522231344131449568}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -1654763043801197786}
+  - {fileID: -2455879299503146467}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -646,4 +746,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 482
+  Exists: 0
+--- !u!114 &6903594140178287881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EntityTwo/Tutorial
+  m_EditorClassIdentifier: 
+  Name: Tutorial
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 0

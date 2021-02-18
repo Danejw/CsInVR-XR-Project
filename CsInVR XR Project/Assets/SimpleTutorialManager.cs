@@ -11,6 +11,9 @@ namespace CSInVR.Tutorial
 
         private bool isTutorialComplete = false;
 
+        public TutorialHikeBall ball;
+        public Transform resetTransform;
+
         // event to send if target is hit
         public delegate void OnTutorialEnd();
         public static event OnTutorialEnd onTutorialEnd;
@@ -76,6 +79,22 @@ namespace CSInVR.Tutorial
 
             isTutorialComplete = false;
             targetsHit = 0;
+        }
+
+
+        public void ResetBall()
+        {
+            if (ball && resetTransform)
+            {
+                if (debug) Debug.Log("Reseting the ball");
+
+                ball.ResetBall(resetTransform.position);
+            }
+            else
+            {
+                if (debug) Debug.Log("Missing referebces, the ball cannot be reset");
+            }
+
         }
 
     }

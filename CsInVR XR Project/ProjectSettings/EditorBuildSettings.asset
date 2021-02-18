@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Persistent Scene.unity
     guid: cadd181291ad68d4ab6b55b5ea7b8a5a
   - enabled: 1
-    path: Assets/Scenes/Football Quarterback Touchdown Challenge.unity
+    path: Assets/Scenes/Football AI Quarterback Touchdown Challenge.unity
     guid: d244277b149d26349a88e90c81fb95a9
   - enabled: 1
     path: Assets/Scenes/Football Home Scene.unity
@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Football Tutorial Scene.unity
     guid: a4b7fb1a559bf5546b88e97e48b5d53a
+  - enabled: 1
+    path: Assets/Scenes/Football NewHome Scene.unity
+    guid: 47c2b2f8093c52143837fddd2bb3dcf2
+  - enabled: 1
+    path: Assets/Scenes/Football Quarterback Touchdown Challenge Striped.unity
+    guid: aa6b1a1a9d3b3c64b940c939c58b6686
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b240aeee0bc42ad4d86daded1f49d6c0,
       type: 2}

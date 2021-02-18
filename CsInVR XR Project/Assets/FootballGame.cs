@@ -232,6 +232,11 @@ namespace CSInVR.Football
             ball.ResetBall(hikePosition);
         }
 
+        public void ResetGame()
+        {
+            InitGame(startingPosition);
+        }
+
 
         // Events
         private void OnGameStartEvent()
