@@ -12,7 +12,7 @@ namespace CSInVR.Football
         public bool debug;
 
         [SerializeField] private bool spiral = true;
-        [SerializeField] private float minSpiralVelocity = 5;
+        public float minSpiralVelocity = 5;
         [SerializeField] private float spiralAngleAmt = 180;
         [SerializeField] private float spiralSpinSpeed = 10;
 
@@ -28,17 +28,18 @@ namespace CSInVR.Football
         public static event OnMissedCatch onMissedCatch;
 
         private Grabbable grabbable;
-        private Rigidbody rig;
+        protected Rigidbody rig;
 
-        private bool isCaught;
+        protected bool isCaught;
 
         [SerializeField] private FootballGame footballGame; 
         private Vector3 startingPosition;
 
-        [SerializeField] private bool isGrabbed;
+        protected bool isGrabbed;
 
 
-        private void Start()
+
+        protected virtual void Start()
         {
             grabbable = GetComponent<Grabbable>();
             if (footballGame) footballGame = footballGame.GetComponent<FootballGame>(); else Debug.Log("The FootballGame is Not assigned");
@@ -46,7 +47,7 @@ namespace CSInVR.Football
             if (!rig) rig = GetComponent<Rigidbody>();
         }
 
-        void OnEnable()
+        protected virtual void OnEnable()
         {
             grabbable = GetComponent<Grabbable>();
 
@@ -54,17 +55,15 @@ namespace CSInVR.Football
 
             if (GetBallIsActive()) SetBallIsActive(false);
 
-            startingPosition = footballGame.startingPosition;
+            //startingPosition = footballGame.startingPosition;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (GetBallIsActive()) SetBallIsActive(false);
         }
 
-
-        // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             if (GetBallIsActive() && hasHiked)
             {
@@ -101,9 +100,8 @@ namespace CSInVR.Football
             if (spiral && rig.velocity.magnitude > minSpiralVelocity)
                 Spiral();
         }
-        
 
-        private void OnCollisionEnter(Collision collision)
+        protected virtual void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "Ground" && GetBallIsActive())
             {
@@ -114,6 +112,8 @@ namespace CSInVR.Football
                 if (debug) Debug.Log("The Ball has hit the ground");
             }
         }
+
+
 
         public void SetIsHiked(bool value)
         {
