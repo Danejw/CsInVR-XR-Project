@@ -21,30 +21,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Grass Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 7f8283e5424e9cf4081b76f97100524e,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2050
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_834D764F:
-        m_Texture: {fileID: 2800000, guid: 2a4b198fb3770914bba5001b89f3fec4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_B8534870:
-        m_Texture: {fileID: 2800000, guid: 87ce03bd447ccce48bbff87ac0d8355f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_ECA99D36:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 2a4b198fb3770914bba5001b89f3fec4, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -74,9 +62,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2CECEB17: -0.14
-    - Vector1_EADAEF5B: -0.94
-    - Vector1_EC160EC9: 0.62
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -99,13 +84,6 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_3F56407C: {r: 0, g: 1, b: 0.2126374, a: 0}
-    - Color_DC89D82B: {r: 0.19506206, g: 0.19506206, b: 0.19506206, a: 0}
-    - Color_F1F48A05: {r: 0, g: 0, b: 0.03773582, a: 0}
-    - Vector2_57523BB5: {r: 0.5, g: -0.36, b: 0, a: 0}
-    - Vector2_797CC86C: {r: 0.05, g: 1.8, b: 1.35, a: 0.05}
-    - Vector2_F7E6B65F: {r: 0, g: 0.18, b: 0, a: 0}
-    - Vector3_F0E4CBE7: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.09578478, g: 0.7735849, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.019654071, g: 0.23584908, b: 0, a: 1}
