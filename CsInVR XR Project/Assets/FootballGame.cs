@@ -10,6 +10,7 @@ namespace CSInVR.Football
         public bool debug;
 
         public string sceneToLoadOnGameOver;
+        public GameObject ui;
 
         public int currentDown = 1;
         public int maxDown = 4;
@@ -39,6 +40,7 @@ namespace CSInVR.Football
         public GameObject hikeMarker;
         public Goal goal;
 
+
         //events
         public delegate void OnGameStart();
         public static event OnGameStart onGameStart;
@@ -66,7 +68,6 @@ namespace CSInVR.Football
         {
             HikeBall.onMissedCatch += MissedCatchEvent;
             Reciever.onCatch += CatchEvent;
-            //Goal.onGoal += TouchdownEvent;
             Goal.onFirstDown += FirstdownEvent;
             Blocker.onBlock += BlockEvent;
         }
@@ -75,7 +76,6 @@ namespace CSInVR.Football
         {
             HikeBall.onMissedCatch -= MissedCatchEvent;
             Reciever.onCatch -= CatchEvent;
-            //Goal.onGoal -= TouchdownEvent;
             Goal.onFirstDown -= FirstdownEvent;
             Blocker.onBlock -= BlockEvent;
         }
@@ -182,6 +182,8 @@ namespace CSInVR.Football
 
         private void GameOver()
         {
+            // happens when the firstdown or goal is not met
+
             //StartCoroutine(EndGame());
 
             if (debug) Debug.Log("The Game is Over!");
@@ -189,9 +191,6 @@ namespace CSInVR.Football
             isGameOver = true;
 
             onGameOver?.Invoke();
-
-            // happens when the firstdown or goal is not met
-            // sends off an event to show UI to either restart game or to go back to the main menu
         }
 
         IEnumerator EndGame()
@@ -252,9 +251,7 @@ namespace CSInVR.Football
 
             goal.MadeGoal();
 
-            StartCoroutine(DelayedInitGame(10));
-
-            // show UI to restart the game or to go to the main menu
+            // StartCoroutine(DelayedInitGame(10));
         }
 
         private void FirstdownEvent()
