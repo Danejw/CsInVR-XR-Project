@@ -26,7 +26,7 @@ namespace CSInVR
         {
             DontDestroyOnLoad(gameObject);
 
-            Football.FootballGame.onGameOver += LoadHomeScene;
+            // Football.FootballGame.onGameOver += LoadHomeScene;
 
             _loadOperations = new List<AsyncOperation>();
             _currentSceneName = SceneManager.GetActiveScene().name;
@@ -34,7 +34,7 @@ namespace CSInVR
 
         private void OnDisable()
         {
-            Football.FootballGame.onGameOver -= LoadHomeScene;
+            // Football.FootballGame.onGameOver -= LoadHomeScene;
         }
 
         private void OnLoadOperationComplete(AsyncOperation ao)

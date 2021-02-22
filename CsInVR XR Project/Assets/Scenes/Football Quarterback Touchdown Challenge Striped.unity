@@ -2332,6 +2332,7 @@ GameObject:
   - component: {fileID: 338288247}
   - component: {fileID: 338288246}
   - component: {fileID: 338288244}
+  - component: {fileID: 338288245}
   m_Layer: 0
   m_Name: CenterLineMan
   m_TagString: Reciever
@@ -2410,6 +2411,19 @@ MonoBehaviour:
       Version: 1.6.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &338288245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338288242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe293657aaadd147a6c247d6e1f06d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
 --- !u!195 &338288246
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5073,7 +5087,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 35747fadd6209cb4e885c2ec67cc1229,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000448557295188564, guid: 35747fadd6209cb4e885c2ec67cc1229,
         type: 3}
@@ -8697,13 +8711,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800517539}
+  - component: {fileID: 800517540}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &800517539
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8725,6 +8740,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &800517540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800517538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2c6d82cd256ba4597e1a8f3442fbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &803405423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 628209258415805385, guid: 8474b2bf0c19d3342a5f1f3a0fc5f993,
@@ -9587,8 +9614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c6f7f82da6f904d85aa3cbe3b6f0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  sceneToLoadOnGameOver: Football Home Scene
+  debug: 1
+  sceneToLoadOnGameOver: Football NewHome Scene
+  ui: {fileID: 800517538}
   currentDown: 1
   maxDown: 4
   ball: {fileID: 1586048031}
@@ -18600,7 +18628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1460856100
 Transform:
   m_ObjectHideFlags: 0
@@ -21172,6 +21200,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6900070521966935655}
+        m_MethodName: ResetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 338288245}
+        m_MethodName: ResetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   AButtonDown:
     m_PersistentCalls:
       m_Calls: []
@@ -21618,6 +21668,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 931965081}
         m_MethodName: ResetGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 800517540}
+        m_MethodName: HideUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42898,6 +42959,7 @@ GameObject:
   - component: {fileID: 6900070521966935657}
   - component: {fileID: 6900070521966935658}
   - component: {fileID: 6900070521966935659}
+  - component: {fileID: 6900070521966935655}
   m_Layer: 0
   m_Name: CenterAttacker
   m_TagString: Blocker
@@ -42922,6 +42984,19 @@ Transform:
   m_Father: {fileID: 259477878}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 191.336, z: 0}
+--- !u!114 &6900070521966935655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900070521966935653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe293657aaadd147a6c247d6e1f06d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
 --- !u!143 &6900070521966935657
 CharacterController:
   m_ObjectHideFlags: 0
