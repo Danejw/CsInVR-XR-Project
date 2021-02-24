@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNameToLoad: Football Tutorial Scene
-  delayTime: 0.1
+  delayTime: 1
 --- !u!1 &289949104
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNameToLoad: Football Quarterback Touchdown Challenge Striped
-  delayTime: 0.1
+  delayTime: 1
 --- !u!1 &442534154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,7 +5129,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 61e371bb7304ead4dbb28e1cf379a790, type: 2}
+  - {fileID: 2100000, guid: 9e6520e2f5b36bb43bab95c8e84d7716, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6603,8 +6603,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 21.86
-  m_Range: 11.04
+  m_Intensity: 23.1
+  m_Range: 26.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7027,7 +7027,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh176378
+  m_Name: pb_Mesh157422
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8059,7 +8059,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh176358
+  m_Name: pb_Mesh157402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

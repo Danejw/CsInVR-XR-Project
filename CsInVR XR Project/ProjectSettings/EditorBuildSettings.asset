@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Football Tutorial Scene.unity
     guid: a4b7fb1a559bf5546b88e97e48b5d53a
   - enabled: 1
-    path: Assets/Scenes/Football NewHome Scene.unity
+    path: Assets/Scenes/wqw.unity
     guid: 47c2b2f8093c52143837fddd2bb3dcf2
   - enabled: 1
     path: Assets/Scenes/Football Quarterback Touchdown Challenge Striped.unity
