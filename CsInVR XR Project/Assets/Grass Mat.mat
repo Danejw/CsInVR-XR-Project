@@ -81,9 +81,11 @@ Material:
     - Boolean_5C6211E0: 1
     - Boolean_722B3BD7: 1
     - Set_To_World_Coordinates: 1
-    - Vector1_2382E890: -17.88
+    - Vector1_2382E890: -0.54
     - Vector1_4082D638: 0.71
+    - Vector1_68D1ADF: 0
     - Vector1_8064D28C: 10
+    - Vector1_872F52E9: 0
     - Vector1_9FA823E4: 0
     - Vector1_D50BDBF9: 0
     - _AlphaClip: 0
@@ -108,9 +110,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_8991600B: {r: 0, g: 2, b: 0.32941177, a: 0}
+    - Color_8991600B: {r: 0, g: 3.4379127, b: 0.57972664, a: 0}
     - Color_F9176D0D: {r: 0.0938885, g: 0.8773585, b: 0.062077243, a: 0}
     - Vector2_36E7F085: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_5DE2B2C8: {r: -1.48, g: 23.64, b: 0, a: 0}
     - Vector2_9AE3B6D8: {r: 0.5, g: 0.5, b: 0, a: 0}
     - Vector2_D7A1A99F: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_E02E91EA: {r: -0.31, g: 0, b: 0, a: 0}
