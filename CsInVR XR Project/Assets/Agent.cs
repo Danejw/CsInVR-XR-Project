@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 
+
 namespace CSInVR.Football
 {
     [RequireComponent(typeof(BehaviorTree))]
 
-    public class Center : MonoBehaviour
+    public class Agent : MonoBehaviour
     {
         public bool debug;
 
