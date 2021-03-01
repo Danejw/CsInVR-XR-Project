@@ -69,7 +69,7 @@ namespace CSInVR.Football
             HikeBall.onMissedCatch += MissedCatchEvent;
             Reciever.onCatch += CatchEvent;
             Goal.onFirstDown += FirstdownEvent;
-            Blocker.onBlock += BlockEvent;
+            Agent_CenterAttacker.onBlock += BlockEvent;
         }
 
         private void OnDisable()
@@ -77,7 +77,7 @@ namespace CSInVR.Football
             HikeBall.onMissedCatch -= MissedCatchEvent;
             Reciever.onCatch -= CatchEvent;
             Goal.onFirstDown -= FirstdownEvent;
-            Blocker.onBlock -= BlockEvent;
+            Agent_CenterAttacker.onBlock -= BlockEvent;
         }
 
         // Game Loop

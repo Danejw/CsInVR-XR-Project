@@ -22,7 +22,7 @@ namespace CSInVR.Football
             //HikeBall.onMissedCatch += MissedCatchSoundEvent;
             FootballGame.onFirstdown += FirstdownParticleEvent;
             //FootballGame.onReadyToStart += ReadyToStartSoundEvent;
-            Blocker.onBlock += BlockedParticleEvent;
+            Agent_CenterAttacker.onBlock += BlockedParticleEvent;
             //FootballGame.onGameOver += GameOverEvent;
         }
 
@@ -31,6 +31,7 @@ namespace CSInVR.Football
             Goal.onGoal -= GoalParticleEvent;
             Reciever.onCatch -= CatchParticleEvent;
             FootballGame.onFirstdown -= FirstdownParticleEvent;
+            Agent_CenterAttacker.onBlock -= BlockedParticleEvent;
 
         }
 

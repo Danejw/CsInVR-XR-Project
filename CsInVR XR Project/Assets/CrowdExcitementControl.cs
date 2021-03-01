@@ -39,7 +39,7 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch += CrowdCheers;
             Goal.onGoal += CrowdTouchdown;
             HikeBall.onMissedCatch += CrowdMissedOpportunity;
-            Blocker.onBlock += CrowdBlockedPass;
+            Agent_CenterAttacker.onBlock += CrowdBlockedPass;
         }
 
         private void OnDisable()
@@ -48,7 +48,7 @@ namespace CSInVR.Football.Fmod
             Reciever.onCatch -= CrowdCheers;
             Goal.onGoal -= CrowdTouchdown;
             HikeBall.onMissedCatch -= CrowdMissedOpportunity;
-            Blocker.onBlock -= CrowdBlockedPass;
+            Agent_CenterAttacker.onBlock -= CrowdBlockedPass;
 
         }
 

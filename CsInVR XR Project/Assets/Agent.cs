@@ -25,7 +25,7 @@ namespace CSInVR.Football
         private void OnEnable()
         {
             HikeBall.onHike += EnableBehaviorTree;
-            Blocker.onBlock += DisableBehaviorTree;
+            Agent_CenterAttacker.onBlock += DisableBehaviorTree;
             Reciever.onCatch += DisableBehaviorTree;
             FootballGame.onGameOver += DisableBehaviorTree;
             FootballGame.onGameStart += DisableBehaviorTree;
@@ -39,7 +39,7 @@ namespace CSInVR.Football
         private void OnDisable()
         {
             HikeBall.onHike -= EnableBehaviorTree;
-            Blocker.onBlock -= DisableBehaviorTree;
+            Agent_CenterAttacker.onBlock -= DisableBehaviorTree;
             Reciever.onCatch -= DisableBehaviorTree;
             FootballGame.onGameOver -= DisableBehaviorTree;
             FootballGame.onGameStart -= DisableBehaviorTree;

@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Football Quarterback Touchdown Challenge Striped.unity
     guid: aa6b1a1a9d3b3c64b940c939c58b6686
+  - enabled: 1
+    path: Assets/Scenes/Football NewHome Scene.unity
+    guid: dd7e78d4d87f18b4b83c3c53ffdba770
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b240aeee0bc42ad4d86daded1f49d6c0,
       type: 2}

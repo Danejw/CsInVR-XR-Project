@@ -50,7 +50,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike += Run;
             Reciever.onCatch += CatchEvent;
-            Blocker.onBlock += BlockEvent;
+            Agent_CenterAttacker.onBlock += BlockEvent;
             HikeBall.onMissedCatch += MissedCatchEvent;
 
             hasCaught = false;
@@ -63,7 +63,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike -= Run;
             Reciever.onCatch -= CatchEvent;
-            Blocker.onBlock -= BlockEvent;
+            Agent_CenterAttacker.onBlock -= BlockEvent;
             HikeBall.onMissedCatch -= MissedCatchEvent;
 
             DestroyRoute();

@@ -40,7 +40,7 @@ namespace CSInVR.Football.Fmod
             Goal.onFirstDown += FirstdownSoundEvent;
             FootballGame.onReadyToStart += ReadyToStartSoundEvent;
             FootballGame.onGameStart += GameStartSoundEvent;
-            Blocker.onBlock += BlockEvent;
+            Agent_CenterAttacker.onBlock += BlockEvent;
             FootballGame.onGameOver += GameOverEvent;
         }
 
@@ -56,7 +56,7 @@ namespace CSInVR.Football.Fmod
             FootballGame.onReadyToStart -= ReadyToStartSoundEvent;
             FootballGame.onGameStart -= GameStartSoundEvent;
             FootballGame.onGameOver -= GameOverEvent;
-            Blocker.onBlock -= BlockEvent;
+            Agent_CenterAttacker.onBlock -= BlockEvent;
         }
 
         private void GameOverEvent()
