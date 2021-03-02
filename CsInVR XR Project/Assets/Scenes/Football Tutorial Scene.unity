@@ -10374,7 +10374,18 @@ MonoBehaviour:
       m_Calls: []
   XButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 480411839}
+        m_MethodName: ToggleUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1133587735
 Transform:
   m_ObjectHideFlags: 0
@@ -23811,6 +23822,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuideRobot_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3938175517228217105, guid: b20ace30cce38c040943bcbbbe955906,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4208152149516967249, guid: b20ace30cce38c040943bcbbbe955906,
         type: 3}
       propertyPath: goToObject
@@ -25191,7 +25207,7 @@ PrefabInstance:
     - target: {fileID: 9018402028381966569, guid: 19f329dd5a28d6848a1c380b6ab4a103,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f329dd5a28d6848a1c380b6ab4a103, type: 3}

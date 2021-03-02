@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using BNG;
 
 namespace CSInVR.Tutorial
 {
@@ -12,24 +12,34 @@ namespace CSInVR.Tutorial
         {
             gameObject.SetActive(false);
 
-            SimpleTutorialManager.onTutorialEnd += DisplayEndUI;
-            FootballTutorialEvents.onTutorialStart += HideEndUI;
+            SimpleTutorialManager.onTutorialEnd += DisplayUI;
+            FootballTutorialEvents.onTutorialStart += HideUI;
         }
 
         private void OnDestroy()
         {
-            SimpleTutorialManager.onTutorialEnd -= DisplayEndUI;
-            FootballTutorialEvents.onTutorialStart -= HideEndUI;
+            SimpleTutorialManager.onTutorialEnd -= DisplayUI;
+            FootballTutorialEvents.onTutorialStart -= HideUI;
         }
 
-        private void DisplayEndUI()
+        public void DisplayUI()
         {
             gameObject.SetActive(true);
         }
 
-        private void HideEndUI()
+        public void HideUI()
         {
             gameObject.SetActive(false);
         }
+
+        public void ToggleUI()
+        {
+            if (this.gameObject.activeSelf == false)
+                DisplayUI();
+            else
+                HideUI();
+        }
+
+
     }
 }
