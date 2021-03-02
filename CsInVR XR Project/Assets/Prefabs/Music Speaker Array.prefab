@@ -121,11 +121,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FmodMusicSpeaker
       objectReference: {fileID: 0}
-    - target: {fileID: 4529737813699424446, guid: d254a506bd3086d44b7e211cb54cd529,
-        type: 3}
-      propertyPath: test
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4529737813699424447, guid: d254a506bd3086d44b7e211cb54cd529,
         type: 3}
       propertyPath: m_LocalPosition.x

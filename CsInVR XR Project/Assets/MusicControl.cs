@@ -12,7 +12,6 @@ namespace CSInVR.Football.Fmod
     public class MusicControl : MonoBehaviour
     {
         public bool debug;
-        public bool test;
 
         [SerializeField] [EventRef] private string eventPath;
         private EventInstance eventInstance;
@@ -20,10 +19,14 @@ namespace CSInVR.Football.Fmod
 
         private void OnEnable()
         {
+            PlayFootballMusicScene();
+
             if (eventPath != null)
             {
-                eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                eventInstance.start();
+                eventInstance = RuntimeManager.CreateInstance(eventPath);
+                RuntimeManager.AttachInstanceToGameObject(eventInstance, transform, GetComponent<Rigidbody>());
+
+                PlayFootballMusicScene();
             }
             else
                 Debug.LogError("The event path is Not assigned");
