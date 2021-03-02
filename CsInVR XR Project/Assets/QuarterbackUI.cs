@@ -43,7 +43,13 @@ namespace CSInVR.Football
             if (gameObject.activeSelf) gameObject.SetActive(false);
         }
 
-
+        public void ToggleUI()
+        {
+            if (this.gameObject.activeSelf == false)
+                DisplayUI();
+            else
+                HideUI();
+        }
         // play sound
         // play tactile on controller
     }

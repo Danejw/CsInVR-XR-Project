@@ -27,15 +27,18 @@ namespace CSInVR
 
         private void Update()
         {
-            if (!player) FindPlayer();
-            if (!screenFader) FindScreenFader();
+            // if (!player) FindPlayer();
+            // if (!screenFader) FindScreenFader();
         }
 
         private void FixedUpdate()
         {
             // getting an updated version of the player position and rotation
-            if (player) playerPosition = player.GetComponent<Transform>().position;
-            if (player) playerRotation = player.GetComponent<Transform>().rotation;
+            if (player)
+            {
+                playerPosition = player.GetComponent<Transform>().position;
+                playerRotation = player.GetComponent<Transform>().rotation;
+            }
         }
 
         private void FindPlayer()
@@ -44,7 +47,12 @@ namespace CSInVR
 
             player = FindObjectOfType<BNGPlayerController>().transform;
 
+            if (!player)
+                player = GameObject.FindGameObjectWithTag("Player").transform;
+            
+
             if (player) if (debug) Debug.Log("Found player " + player.name);
+            else if (debug) Debug.Log("Player Not Found");
         }
 
         private void FindScreenFader()
@@ -54,6 +62,7 @@ namespace CSInVR
             screenFader = FindObjectOfType<ScreenFader>();
 
             if (screenFader) if (debug) Debug.Log("Found screen fader " + screenFader.name);
+            else if (debug) Debug.Log("Found screen fader " + screenFader.name);
         }
 
         public Vector3 getPlayerPosition()

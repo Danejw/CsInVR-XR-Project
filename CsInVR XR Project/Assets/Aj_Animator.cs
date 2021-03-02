@@ -24,7 +24,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike += Run;
             Reciever.onCatch += Catch;
-            Blocker.onBlock += Block;
+            Agent_CenterAttacker.onBlock += Block;
             HikeBall.onMissedCatch += MissedCatch;
             FootballGame.onReadyToStart += Idle;
         }
@@ -33,7 +33,7 @@ namespace CSInVR.Football
         {
             HikeBall.onHike -= Run;
             Reciever.onCatch -= Catch;
-            Blocker.onBlock -= Block;
+            Agent_CenterAttacker.onBlock -= Block;
             HikeBall.onMissedCatch -= MissedCatch;
             FootballGame.onReadyToStart -= Idle;
         }

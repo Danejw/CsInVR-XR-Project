@@ -8,7 +8,6 @@ namespace CSInVR.Football
 {
     public class InputManager : MonoBehaviour
     {
-
         public UnityEvent BButtonDown;
         public UnityEvent AButtonDown;
         public UnityEvent YButtonDown;
