@@ -14,7 +14,6 @@ namespace CSInVR
         UILoop inner;
         UILoop outer;
 
-
         // manages state of the ui
         [SerializeField] bool isInnerLoopActive;
         [SerializeField] bool isOuterLoopActive;

@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 403119330}
   - component: {fileID: 403119329}
   - component: {fileID: 403119328}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Home Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2445,6 +2445,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 403119328}
         m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 640101531}
+        m_MethodName: PlayDownClickAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3062,7 +3073,7 @@ GameObject:
   - component: {fileID: 414045630}
   - component: {fileID: 414045632}
   - component: {fileID: 414045631}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6478,7 +6489,9 @@ GameObject:
   m_Component:
   - component: {fileID: 640101529}
   - component: {fileID: 640101530}
-  m_Layer: 0
+  - component: {fileID: 640101532}
+  - component: {fileID: 640101531}
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6518,6 +6531,117 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2c6d82cd256ba4597e1a8f3442fbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &640101531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640101528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436d989337d86534492c34b5975d76b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  downClip: {fileID: 8300000, guid: 96a66c8233acdff40a72e102fc819781, type: 3}
+  upClip: {fileID: 8300000, guid: 5602338fc0b4a3149a1b5bb57217426f, type: 3}
+--- !u!82 &640101532
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640101528}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6229821916467159877, guid: 9cba20cc94409aa4396b8f6070dafcb4,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &647496178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7230,7 +7354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773096009}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MidRangeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7579,7 +7703,7 @@ GameObject:
   - component: {fileID: 905510522}
   - component: {fileID: 905510521}
   - component: {fileID: 905510520}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7667,7 +7791,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 993812521}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7675,7 +7799,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2113119327
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &911366744
@@ -9296,7 +9420,7 @@ GameObject:
   - component: {fileID: 1123282694}
   - component: {fileID: 1123282696}
   - component: {fileID: 1123282695}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18308,7 +18432,7 @@ GameObject:
   - component: {fileID: 1632516856}
   - component: {fileID: 1632516855}
   - component: {fileID: 1632516854}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Restart Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18400,8 +18524,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 931965081}
-        m_MethodName: InitNextPlay
+      - m_Target: {fileID: 640101531}
+        m_MethodName: PlayDownClickAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
