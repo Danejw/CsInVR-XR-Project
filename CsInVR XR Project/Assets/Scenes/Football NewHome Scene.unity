@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 289068824}
   - component: {fileID: 289068823}
   - component: {fileID: 289068826}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hoop Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,6 +540,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 289068826}
         m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 480411839}
+        m_MethodName: PlayDownClickAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -641,7 +652,7 @@ GameObject:
   - component: {fileID: 340959764}
   - component: {fileID: 340959766}
   - component: {fileID: 340959765}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +819,7 @@ GameObject:
   - component: {fileID: 431964652}
   - component: {fileID: 431964651}
   - component: {fileID: 431964654}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,6 +891,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 431964654}
         m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 480411839}
+        m_MethodName: PlayDownClickAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1012,7 +1034,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480411838}
-  m_Layer: 0
+  - component: {fileID: 480411840}
+  - component: {fileID: 480411839}
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,6 +1064,117 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &480411839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480411837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436d989337d86534492c34b5975d76b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  downClip: {fileID: 8300000, guid: 96a66c8233acdff40a72e102fc819781, type: 3}
+  upClip: {fileID: 8300000, guid: 5602338fc0b4a3149a1b5bb57217426f, type: 3}
+--- !u!82 &480411840
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480411837}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6229821916467159877, guid: 9cba20cc94409aa4396b8f6070dafcb4,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &481087266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,6 +6905,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 982a700fdb1e3b442aff6b92162e0a5b, type: 3}
+--- !u!20 &979805647 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 501104281070432415, guid: 982a700fdb1e3b442aff6b92162e0a5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 979805646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1001020148
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,7 +7809,7 @@ GameObject:
   - component: {fileID: 1566523272}
   - component: {fileID: 1566523271}
   - component: {fileID: 1566523274}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7744,7 +7885,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 979805647}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7752,7 +7893,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2113119327
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1566523274
@@ -7900,7 +8041,7 @@ GameObject:
   - component: {fileID: 1736276181}
   - component: {fileID: 1736276183}
   - component: {fileID: 1736276182}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8031,7 +8172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1748579819}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MidRangeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

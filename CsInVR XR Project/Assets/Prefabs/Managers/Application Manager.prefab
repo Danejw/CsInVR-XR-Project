@@ -315,7 +315,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.03
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1326,7 +1326,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1335,18 +1335,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 0, b: 0.93103456, a: 1}
+        key2: {r: 0.07586217, g: 1, b: 0, a: 0}
+        key3: {r: 0, g: 1, b: 1, a: 0}
+        key4: {r: 1, g: 1, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
+        ctime1: 17373
+        ctime2: 33588
+        ctime3: 47486
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -1358,8 +1358,8 @@ ParticleSystem:
         atime5: 0
         atime6: 0
         atime7: 0
-        m_Mode: 0
-        m_NumColorKeys: 2
+        m_Mode: 1
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -4740,7 +4740,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: a0823d7298e9f4efc84828f6cf2eb6ed, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4796,7 +4796,6 @@ GameObject:
   - component: {fileID: 476957125105907410}
   - component: {fileID: 476957125105907411}
   - component: {fileID: 1390111547}
-  - component: {fileID: 2708562351268519965}
   m_Layer: 0
   m_Name: Application Manager
   m_TagString: Untagged
@@ -4831,7 +4830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c48a35fc4fca743bb79d6c19405450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingSceneName: Football Home Scene
+  openingSceneName: Football NewHome Scene
   SystemPrefabs:
   - {fileID: 3938055586147048392, guid: 3ca20daf090083148b8f73b23639ea20, type: 3}
   - {fileID: 2604844808965881107, guid: 92d46c8acffc8af469ea8c66ba254b56, type: 3}
@@ -4849,39 +4848,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6993259fd398fe4292c89851ceebbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 1
---- !u!114 &2708562351268519965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476957125105907420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f31fe4552b4a76438aa4d7ba210c08a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  AButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  YButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ToggleUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  XButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
+  test: 0
