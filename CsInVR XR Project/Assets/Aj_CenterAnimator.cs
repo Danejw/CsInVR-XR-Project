@@ -7,11 +7,12 @@ namespace CSInVR.Football
 {
     [RequireComponent(typeof(Animator))]
 
-    public class Aj_Animator : MonoBehaviour
+    public class Aj_CenterAnimator : MonoBehaviour
     {
         public bool debug;
 
         [SerializeField] private GameObject parent;
+        private Rigidbody parentRig;
 
         private Animator anim;
 
@@ -22,37 +23,40 @@ namespace CSInVR.Football
 
         private void OnEnable()
         {
-            HikeBall.onHike += Run;
+            HikeBall.onHike += Push;
             Reciever.onCatch += Catch;
             Agent_CenterAttacker.onBlock += Block;
             HikeBall.onMissedCatch += MissedCatch;
-            FootballGame.onReadyToStart += ReadyIdle;
+            FootballGame.onReadyToStart += Idle;
             FootballGame.onGameOver += Defeat;
             Goal.onGoal += Victory;
+
+            if (parent)
+                parentRig = parent.GetComponent<Rigidbody>();
         }
 
         private void OnDisable()
         {
-            HikeBall.onHike -= Run;
+            HikeBall.onHike -= Push;
             Reciever.onCatch -= Catch;
             Agent_CenterAttacker.onBlock -= Block;
             HikeBall.onMissedCatch -= MissedCatch;
-            FootballGame.onReadyToStart -= ReadyIdle;
+            FootballGame.onReadyToStart -= Idle;
             FootballGame.onGameOver -= Defeat;
             Goal.onGoal -= Victory;
         }
 
 
-        private void ReadyIdle()
+        private void Push()
         {
             // blend parameter
-            anim.SetFloat("Blend", 0);
+            anim.SetFloat("EmotionBlend", 1);
         }
 
-        private void Run()
+        private void Idle()
         {
             // blend parameter
-            anim.SetFloat("Blend", 1);
+            anim.SetFloat("EmotionBlend", 0);
         }
 
         private void Catch(GameObject reciever)
@@ -62,28 +66,25 @@ namespace CSInVR.Football
 
         private void Block(GameObject Blocker)
         {
-            // blend parameter
-            anim.SetFloat("Blend", 2);
+            Defeat();
         }
 
         private void MissedCatch()
         {
             // blend parameter
-            anim.SetFloat("Blend", 2);
-        }
-
-        private void Victory()
-        {
-            // blend parameter
-            anim.SetFloat("Blend", 4);
+            anim.SetFloat("EmotionBlend", 2);
         }
 
         private void Defeat()
         {
             // blend parameter
-            anim.SetFloat("Blend", 5);
+            anim.SetFloat("EmotionBlend", 4);
         }
 
-
+        private void Victory()
+        {
+            // blend parameter
+            anim.SetFloat("EmotionBlend", 3);
+        }
     }
 }
