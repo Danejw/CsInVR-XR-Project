@@ -114,7 +114,7 @@ namespace CSInVR.Football
                         ToggleHideHikeMarker(false);
                     }
                 }
-                else if (goalMarker.transform.position.z - hikePosition.z > 0)
+                else if (goalMarker.transform.position.z - hikePosition.z >= 0)
                         ToggleHideHikeMarker(true);
             }
             else
