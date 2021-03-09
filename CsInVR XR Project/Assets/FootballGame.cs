@@ -32,7 +32,8 @@ namespace CSInVR.Football
         [SerializeField] private Vector3 firstDownIncrement = new Vector3(0, 0, 10);
         [SerializeField] private Vector3 goalIncrement = new Vector3(0, 0, 50);
 
-        public GameObject[] recievers;
+        public GameObject[] offense;
+        public GameObject[] defense;
         public GameObject player;
         public FirstdownMarker firstdownMark;
         public GameObject firstdownMarkChains;
@@ -105,7 +106,7 @@ namespace CSInVR.Football
                     if (!firstdownMarkChains.activeSelf) firstdownMarkChains.SetActive(true);
 
                 // Touchdown
-                if (!isTouchdown)
+                if (!isTouchdown && !isGameOver)
                 {
                     if (goalMarker.transform.position.z - hikePosition.z <= 0)
                     {
@@ -122,23 +123,8 @@ namespace CSInVR.Football
 
         }
 
-        // Functions
-        private void InitGame(Vector3 position)
-        {
-            if (debug) Debug.Log("Initializing game...");
 
-            setPositions(position);
-            setGoal(position);
-            setFirstDown(position);
-            ResetBall();
-
-            isTouchdown = false;
-            isGameOver = false;
-            currentDown = 1;
-
-            onGameStart?.Invoke();
-        }
-
+        // positioning
         private void setPositions(Vector3 position)
         {
             if (debug) Debug.Log("Setting positions");
@@ -147,15 +133,8 @@ namespace CSInVR.Football
             ball.transform.position = position + new Vector3(0, 0.2f, 0);
             hikePosition = position + new Vector3(0, 0.2f, 0);
 
-            // sets the recievers positions
-            if (recievers != null)
-                foreach (GameObject rec in recievers)
-                    rec.transform.position = position + new Vector3(Random.Range(0.2f, 2), 0, 0);
-
             // sets the player pocket position
-            if (player) player.transform.position = position + new Vector3(0, 0, -3);
-
-            
+            if (player) player.transform.position = position + new Vector3(0, 0, -3);       
         }
 
         private void setGoal(Vector3 position)
@@ -180,6 +159,27 @@ namespace CSInVR.Football
             onFirstdown?.Invoke();
         }
 
+
+        // function
+        private void InitGame(Vector3 position)
+        {
+            if (debug) Debug.Log("Initializing game...");
+
+            setPositions(position);
+            setGoal(position);
+            setFirstDown(position);
+            ResetBall();
+
+            isTouchdown = false;
+            isGameOver = false;
+            currentDown = 1;
+
+            ResumeGame();
+            onReadyToStart?.Invoke();
+
+            onGameStart?.Invoke();
+        }
+
         private void GameOver()
         {
             // happens when the firstdown or goal is not met
@@ -191,13 +191,8 @@ namespace CSInVR.Football
             isGameOver = true;
 
             onGameOver?.Invoke();
-        }
 
-        IEnumerator EndGame()
-        {
-            // Load Scene
-            yield return new WaitForSeconds(3);
-            if (sceneToLoadOnGameOver != null) TransitionManager.Instance?.SceneLoadUnload(sceneToLoadOnGameOver);
+            StopGame();
         }
 
         public void NextPlay()
@@ -222,13 +217,15 @@ namespace CSInVR.Football
             }           
         }
 
-
         private void ResetBall()
         {
             if (debug) Debug.Log("Reseting the ball");
 
-            // reset the ball     
-            ball.ResetBall(hikePosition);
+            if (!ball.GetBallIsActive())
+            {
+                // reset the ball     
+                ball.ResetBall(hikePosition);
+            }
         }
 
         public void ResetGame()
@@ -236,8 +233,35 @@ namespace CSInVR.Football
             InitGame(startingPosition);
         }
 
+        public void StopGame()
+        {
+            offense = GameObject.FindGameObjectsWithTag("Reciever");
+            defense = GameObject.FindGameObjectsWithTag("Blocker");
 
-        // Events
+            if (offense != null)
+                foreach (GameObject obj in offense)
+                    obj.SetActive(false);
+            if (defense != null)
+                foreach (GameObject obj in defense)
+                    obj.SetActive(false);
+
+            if (debug) Debug.Log("Stopping Game");
+        }
+
+        public void ResumeGame()
+        {
+            if (offense != null)
+                foreach (GameObject obj in offense)
+                    obj.SetActive(true);
+            if (defense != null)
+                foreach (GameObject obj in defense)
+                    obj.SetActive(true);
+
+            if (debug) Debug.Log("Resuming Game");
+        }
+
+
+        // events
         private void OnGameStartEvent()
         {
 
@@ -250,6 +274,8 @@ namespace CSInVR.Football
             isTouchdown = true;
 
             goal.MadeGoal();
+
+            StopGame();
 
             // StartCoroutine(DelayedInitGame(10));
         }
@@ -310,15 +336,22 @@ namespace CSInVR.Football
         }
 
 
-        //enumerators
+        // enumerators
         private IEnumerator DelayedInitGame(float seconds)
         {
             yield return new WaitForSeconds(seconds);
             InitGame(startingPosition);
         }
 
+        IEnumerator EndGame()
+        {
+            // Load Scene
+            yield return new WaitForSeconds(3);
+            if (sceneToLoadOnGameOver != null) TransitionManager.Instance?.SceneLoadUnload(sceneToLoadOnGameOver);
+        }
 
-        //uitls
+
+        // utils
         public float calcDistanceYardage(Vector3 position1, Vector3 position2)
         {
             if (debug) Debug.Log("The yardage is " + position1 + " from " + position2);

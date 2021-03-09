@@ -2003,7 +2003,7 @@ MonoBehaviour:
   debug: 0
   caughtPosition: {fileID: 2044582817875491709}
   hasCaught: 0
-  startingPosition: {x: 0, y: 0, z: 0}
+  startingPosition: {x: -3, y: 0, z: -0.5}
   routePointHeight: -0.002
   footballGame: {fileID: 0}
   divisionPoint: {fileID: 665683426391923770, guid: 67ba625f60d70f24f81b7ef56d70a288,
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   numberOfDivisions: 4
   extraDistanceAmount: 10
   recieverSpeed: 3.04
-  randomness: 7
+  randomness: 5
   waypointRadius: 0.1
   isRunning: 0
   regenerateRoute: 0

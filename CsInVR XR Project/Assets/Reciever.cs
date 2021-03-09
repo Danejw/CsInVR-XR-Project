@@ -44,6 +44,8 @@ namespace CSInVR.Football
             divisionPoints = new List<Transform>();
             CreateRoute();
             isRunning = false;
+
+            startingPosition = this.transform.position;
         }
 
         private void OnEnable()
@@ -53,11 +55,12 @@ namespace CSInVR.Football
             Agent_CenterAttacker.onBlock += BlockEvent;
             HikeBall.onMissedCatch += MissedCatchEvent;
             FootballGame.onGameStart += RegenerateRoute;
+            FootballGame.onReadyToStart += RegenerateRoute;
+
 
             hasCaught = false;
             isRunning = false;
 
-            startingPosition = this.transform.position;
         }
 
         private void OnDisable()
@@ -67,6 +70,7 @@ namespace CSInVR.Football
             Agent_CenterAttacker.onBlock -= BlockEvent;
             HikeBall.onMissedCatch -= MissedCatchEvent;
             FootballGame.onGameStart -= RegenerateRoute;
+            FootballGame.onReadyToStart -= RegenerateRoute;
 
             DestroyRoute();
         }
@@ -95,7 +99,7 @@ namespace CSInVR.Football
         {
             onCatch?.Invoke(reciever);
             hasCaught = true;
-            isRunning = false;
+            isRunning = false;           
 
             if (debug) Debug.Log("The ball has been caught");
         }

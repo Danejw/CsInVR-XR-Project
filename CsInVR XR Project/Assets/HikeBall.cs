@@ -56,11 +56,17 @@ namespace CSInVR.Football
             if (GetBallIsActive()) SetBallIsActive(false);
 
             //startingPosition = footballGame.startingPosition;
+
+            Reciever.onCatch += SetBallInActive;
+            Agent_CenterAttacker.onBlock += SetBallInActive;
         }
 
         protected virtual void OnDisable()
         {
             if (GetBallIsActive()) SetBallIsActive(false);
+
+            Reciever.onCatch -= SetBallInActive;
+            Agent_CenterAttacker.onBlock -= SetBallInActive;
         }
 
         protected virtual void Update()
@@ -99,6 +105,8 @@ namespace CSInVR.Football
             // if ball is moving faster than a minimal velocity
             if (spiral && rig.velocity.magnitude > minSpiralVelocity)
                 Spiral();
+
+
         }
 
         protected virtual void OnCollisionEnter(Collision collision)
@@ -123,6 +131,11 @@ namespace CSInVR.Football
         public bool GetIsCaught()
         {
             return isCaught;
+        }
+
+        public void SetBallInActive(GameObject obj)
+        {
+            SetBallIsActive(false);
         }
 
         public void ResetBall(Vector3 position)

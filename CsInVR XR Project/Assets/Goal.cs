@@ -14,8 +14,8 @@ namespace CSInVR.Football
         public delegate void OnFirstDown();
         public static event OnFirstDown onFirstDown;
 
-        [SerializeField] private bool goalMade = false;
-        private bool madeFirstdown = false;
+        // [SerializeField] private bool goalMade = false;
+        // private bool madeFirstdown = false;
 
         public int amtOfFirstdowns = 0;
         public int minFirstdowns = 3;

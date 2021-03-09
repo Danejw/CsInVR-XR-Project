@@ -20,6 +20,9 @@ namespace CSInVR.Football
         {
             btree = GetComponent<BehaviorTree>();
             btree.enabled = false;
+
+            startingPosition = transform.position;
+            startingRotation = transform.rotation;
         }
 
         private void OnEnable()
@@ -31,10 +34,8 @@ namespace CSInVR.Football
             FootballGame.onGameStart += DisableBehaviorTree;
             HikeBall.onMissedCatch += DisableBehaviorTree;
             FootballGame.onReadyToStart += DisableBehaviorTree;
-            FootballGame.onGameStart += ResetPosition;
-
-            startingPosition = transform.position;
-            startingRotation = transform.rotation;
+            FootballGame.onReadyToStart += ResetPosition;
+            FootballGame.onGameStart += ResetPosition;           
         }
 
         private void OnDisable()
@@ -46,6 +47,7 @@ namespace CSInVR.Football
             FootballGame.onGameStart -= DisableBehaviorTree;
             HikeBall.onMissedCatch -= DisableBehaviorTree;
             FootballGame.onReadyToStart -= DisableBehaviorTree;
+            FootballGame.onReadyToStart -= ResetPosition;
             FootballGame.onGameStart -= ResetPosition;
         }
 
