@@ -7,10 +7,14 @@ namespace CSInVR.Football
 {
     public class ParticleEvents : MonoBehaviour
     {
-
+        public bool debug;
 
         public ParticleSystem goalParticle;
         public ParticleSystem firstdownParticle;
+
+        [SerializeField] private string enabledParticleName = "NinjaEffect";
+        [SerializeField] private string disabledParticleName = "NinjaEffect";
+        [SerializeField] private string catchParticleName = "CatchEffect";
 
 
 
@@ -24,6 +28,9 @@ namespace CSInVR.Football
             //FootballGame.onReadyToStart += ReadyToStartSoundEvent;
             Agent_CenterAttacker.onBlock += BlockedParticleEvent;
             //FootballGame.onGameOver += GameOverEvent;
+
+            Agent.onAgentEnabled += AgentEnabledParticleEvent;
+            Agent.onAgentDisabled += AgentDisabledParticleEvent;
         }
 
         private void OnDisable()
@@ -33,6 +40,8 @@ namespace CSInVR.Football
             FootballGame.onFirstdown -= FirstdownParticleEvent;
             Agent_CenterAttacker.onBlock -= BlockedParticleEvent;
 
+            Agent.onAgentEnabled -= AgentEnabledParticleEvent;
+            Agent.onAgentDisabled -= AgentDisabledParticleEvent;
         }
 
 
@@ -48,7 +57,7 @@ namespace CSInVR.Football
 
         private void CatchParticleEvent(GameObject reciever)
         {
-            ParticleSystem[] particles = reciever.GetComponentsInChildren<ParticleSystem>();
+            ParticleSystem[] particles = reciever.transform.Find(catchParticleName).GetComponentsInChildren<ParticleSystem>();
 
             if (particles != null)
                 foreach (ParticleSystem particle in particles)
@@ -66,6 +75,44 @@ namespace CSInVR.Football
         private void BlockedParticleEvent(GameObject blocker)
         {
             ParticleSystem[] particles = blocker.GetComponentsInChildren<ParticleSystem>();
+
+            if (particles != null)
+                foreach (ParticleSystem particle in particles)
+                {
+                    if (!particle.isPlaying) particle.Play();
+
+                    ParticleSystem[] subParticles = particle.GetComponentsInChildren<ParticleSystem>();
+
+                    if (subParticles != null)
+                        foreach (ParticleSystem par in subParticles)
+                            if (!par.isPlaying) par.Play();
+                }
+        }
+
+        private void AgentEnabledParticleEvent(Transform agent)
+        {
+            ParticleSystem[] particles = agent.Find(enabledParticleName).GetComponentsInChildren<ParticleSystem>();
+
+            if (debug) Debug.Log("Poof Enabled Particle Effect");
+
+            if (particles != null)
+                foreach (ParticleSystem particle in particles)
+                {
+                    if (!particle.isPlaying) particle.Play();
+
+                    ParticleSystem[] subParticles = particle.GetComponentsInChildren<ParticleSystem>();
+
+                    if (subParticles != null)
+                        foreach (ParticleSystem par in subParticles)
+                            if (!par.isPlaying) par.Play();
+                }
+        }
+
+        private void AgentDisabledParticleEvent(Transform agent)
+        {
+            ParticleSystem[] particles = agent.Find(disabledParticleName).GetComponentsInChildren<ParticleSystem>();
+
+            if (debug) Debug.Log("Poof Disabled Particle Effect");
 
             if (particles != null)
                 foreach (ParticleSystem particle in particles)

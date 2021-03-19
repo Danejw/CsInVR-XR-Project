@@ -9,6 +9,7 @@ namespace CSInVR.Football
     public class InputManager : MonoBehaviour
     {
         public UnityEvent BButtonDown;
+        public UnityEvent BButtonUp;
         public UnityEvent AButtonDown;
         public UnityEvent YButtonDown;
         public UnityEvent XButtonDown;
@@ -17,6 +18,8 @@ namespace CSInVR.Football
         private void Update()
         {
             if (InputBridge.Instance.BButtonDown)
+                BButtonDown?.Invoke();
+            if (InputBridge.Instance.BButtonUp)
                 BButtonDown?.Invoke();
             if (InputBridge.Instance.AButtonDown)
                 AButtonDown?.Invoke();

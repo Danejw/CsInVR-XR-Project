@@ -4801,22 +4801,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1434047108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137410349007489612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb28699c3eac2044e9f52dfa4ad3dd5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  particles:
-  - {fileID: 1434047107}
-  sound: {fileID: 8255457479858858050}
 --- !u!1 &269689041199827969
 GameObject:
   m_ObjectHideFlags: 0
@@ -6869,7 +6853,7 @@ GameObject:
   - component: {fileID: 1550283144560867017}
   - component: {fileID: 5043157717078434257}
   m_Layer: 0
-  m_Name: Running
+  m_Name: Aj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8396,17 +8380,17 @@ PrefabInstance:
     - target: {fileID: 4239773841257353922, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4239773841257353922, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4239773841257353922, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4239773841257353922, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
@@ -8436,7 +8420,7 @@ PrefabInstance:
     - target: {fileID: 4239773841257354045, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
       propertyPath: m_Name
-      value: Ninja Effect
+      value: NinjaEffect
       objectReference: {fileID: 0}
     - target: {fileID: 5309701023218708787, guid: 2e81229b5f334f94284686cb13d08663,
         type: 3}
@@ -8462,12 +8446,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4269023376014481777}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &8255457479858858050 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5309701023218708787, guid: 2e81229b5f334f94284686cb13d08663,
-    type: 3}
-  m_PrefabInstance: {fileID: 4269023376014481777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5115060252927196878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8477,7 +8455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1243861341673150, guid: 3f26293dfafa1e447ab052cf7502a03e, type: 3}
       propertyPath: m_Name
-      value: SpawnYellow
+      value: CatchEffect
       objectReference: {fileID: 0}
     - target: {fileID: 4573774070324944, guid: 3f26293dfafa1e447ab052cf7502a03e, type: 3}
       propertyPath: m_LocalPosition.x

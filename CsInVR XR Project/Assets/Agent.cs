@@ -12,6 +12,12 @@ namespace CSInVR.Football
     {
         public bool debug;
 
+        public delegate void OnAgentEnabled(Transform agent);
+        public static event OnAgentEnabled onAgentEnabled;
+
+        public delegate void OnAgentDisabled(Transform agent);
+        public static event OnAgentDisabled onAgentDisabled;
+
         private BehaviorTree btree;
         private Vector3 startingPosition;
         private Quaternion startingRotation;
@@ -35,11 +41,15 @@ namespace CSInVR.Football
             HikeBall.onMissedCatch += DisableBehaviorTree;
             FootballGame.onReadyToStart += DisableBehaviorTree;
             FootballGame.onReadyToStart += ResetPosition;
-            FootballGame.onGameStart += ResetPosition;           
+            FootballGame.onGameStart += ResetPosition;
+
+            onAgentEnabled?.Invoke(this.transform);
         }
 
         private void OnDisable()
         {
+            onAgentDisabled?.Invoke(transform);
+
             HikeBall.onHike -= EnableBehaviorTree;
             Agent_CenterAttacker.onBlock -= DisableBehaviorTree;
             Reciever.onCatch -= DisableBehaviorTree;

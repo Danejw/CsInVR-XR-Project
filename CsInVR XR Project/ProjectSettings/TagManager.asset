@@ -10,6 +10,7 @@ TagManager:
   - Reciever
   - Pocket
   - Blocker
+  - Particle
   layers:
   - Default
   - TransparentFX

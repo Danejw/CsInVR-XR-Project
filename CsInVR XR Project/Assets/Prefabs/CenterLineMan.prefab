@@ -1341,7 +1341,6 @@ GameObject:
   - component: {fileID: 2174796861931144414}
   - component: {fileID: 2174796861931144412}
   - component: {fileID: 2174796861931144413}
-  - component: {fileID: 2174796861931144402}
   m_Layer: 0
   m_Name: CenterLineMan
   m_TagString: Reciever
@@ -1396,7 +1395,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.4382032
-  m_Center: {x: 0, y: 0.83628726, z: 0}
+  m_Center: {x: 0, y: 1.61, z: 0}
 --- !u!143 &2174796861931144415
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1503,21 +1502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
---- !u!114 &2174796861931144402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2174796861931144410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb28699c3eac2044e9f52dfa4ad3dd5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  particles:
-  - {fileID: 0}
 --- !u!1 &2174796861967431537
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,11 +5166,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ninja Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 4840908975297812971, guid: 2e81229b5f334f94284686cb13d08663,
+        type: 3}
+      propertyPath: particles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840908975297812971, guid: 2e81229b5f334f94284686cb13d08663,
+        type: 3}
+      propertyPath: particles.Array.data[0]
+      value: 
+      objectReference: {fileID: 3809714235017422143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e81229b5f334f94284686cb13d08663, type: 3}
 --- !u!4 &2664123138965746255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4239773841257353922, guid: 2e81229b5f334f94284686cb13d08663,
+    type: 3}
+  m_PrefabInstance: {fileID: 2174796862766243981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3809714235017422143 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3094180546182809010, guid: 2e81229b5f334f94284686cb13d08663,
     type: 3}
   m_PrefabInstance: {fileID: 2174796862766243981}
   m_PrefabAsset: {fileID: 0}
