@@ -323,8 +323,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins:
   - OculusSpatializerfMOD
-  MasterBanks:
-  - Master
+  MasterBanks: []
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
